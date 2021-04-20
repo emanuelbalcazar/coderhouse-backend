@@ -1,0 +1,22 @@
+{
+  "name": "coderhouse-backend",
+  "version": "1.0.0",
+  "description": "codigos de ejemplo para el curso de backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emanuelbalcazar/coderhouse-backend.git"
+  },
+  "author": "Emanuel Balcazar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emanuelbalcazar/coderhouse-backend/issues"
+  },
+  "homepage": "https://github.com/emanuelbalcazar/coderhouse-backend#readme",
+  "devDependencies": {
+    "typescript": "^4.2.4"
+  }
+}
