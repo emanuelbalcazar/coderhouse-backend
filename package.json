@@ -18,5 +18,8 @@
   "homepage": "https://github.com/emanuelbalcazar/coderhouse-backend#readme",
   "devDependencies": {
     "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "rxjs": "^6.6.7"
   }
 }

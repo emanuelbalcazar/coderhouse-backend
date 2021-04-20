@@ -1,0 +1,13 @@
+<script>
+    function contador(inicial) {
+        let cont = inicial;
+
+        return new Promise(resolve => {
+            setInterval(() => {
+                resolve(cont++);
+            }, 1000);
+        })
+    }
+
+    contador(123).then(contador => console.log(contador));
+</script>

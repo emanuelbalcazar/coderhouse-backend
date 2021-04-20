@@ -1,0 +1,21 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.6.7/rxjs.umd.js">
+
+</script>
+
+<script>
+
+    const { Observable } = rxjs;
+
+    function contador(inicial) {
+        let cont = inicial;
+
+        return new Observable(subscriber => {
+            setInterval(() => {
+                subscriber.next(cont++);
+            }, 1000);
+        });
+    }
+
+    contador(123).subscribe(contador => console.log(contador));
+
+</script>
