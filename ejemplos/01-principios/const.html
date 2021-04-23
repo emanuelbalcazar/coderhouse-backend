@@ -1,0 +1,14 @@
+<script>
+    const a = 10;
+    (function () {
+        const a = 20;
+        console.log(a); //output? = 20
+        if (true) {
+            const a = 30;
+            //a = 40;         // ERROR!!!!!!!
+            console.log(a); //output? = 30
+        }
+        console.log(a); //output? = 20
+    })()
+    console.log(a); //output? = 10
+</script>

@@ -1,0 +1,16 @@
+<script>
+    var nombre = 'Tom'
+    const rouco = {
+        nombre: 'Rouco',
+        especie: 'gato',
+        saludar() {
+            console.log(`Miauuuu (Hola me llamo ${this.nombre})`);
+            console.log(this === rouco);
+        }
+    };
+
+    rouco.saludar(); //Miauuuu (Hola me llamo Rouco) true
+
+    let saludar = rouco.saludar; //Miauuuu (Hola me llamo Tom) false
+    saludar();
+</script>
