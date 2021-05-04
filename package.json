@@ -2,7 +2,7 @@
   "name": "coderhouse-backend",
   "version": "1.0.0",
   "description": "codigos de ejemplo para el curso de backend",
-  "main": "index.js",
+  "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
