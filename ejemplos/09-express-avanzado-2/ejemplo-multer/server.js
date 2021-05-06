@@ -12,20 +12,18 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-
-/* Multer config */
+// configuro multer
 const storage = multer.diskStorage({
     destination: function (req, file, callback) {
         console.log(file);
         callback(null, 'uploads')
     },
     filename: function (req, file, callback) {
-        callback(null, `${Date.now()}-${file.originalname}`)
+        callback(null, `${file.originalname}`)
     }
 });
 
-const upload = multer({ storage: storage })
-
+const upload = multer({ storage: storage });
 
 router.get('/', (req, res) => {
     res.sendFile('index');
