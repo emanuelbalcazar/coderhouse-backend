@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios de Ingreso</title>
+</head>
+
+<body>
+
+    <h2>Ingrese Mascota</h2>
+    <form action="/mascotas/guardar" method="POST">
+        Nombre: <input type="text" name="nombre">
+        Raza: <input type="text" name="raza">
+        Edad: <input type="text" name="edad">
+        <button>Enviar</button>
+    </form>
+
+    <br>
+    <hr>
+
+    <h2>Ingrese Persona</h2>
+    <form action="/personas/guardar" method="POST">
+        Nombre: <input type="text" name="nombre">
+        Apellido: <input type="text" name="apellido">
+        Edad: <input type="text" name="edad">
+        <button>Enviar</button>
+    </form>
+
+</body>
+
+</html>
