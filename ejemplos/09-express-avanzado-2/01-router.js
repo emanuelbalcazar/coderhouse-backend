@@ -2,7 +2,6 @@ const express = require('express');
 
 // creo una app de tipo express
 const app = express();
-const puerto = 8080;
 // incorporo el router
 const router = express.Router();
 
@@ -19,6 +18,8 @@ router.post('/', (req, res) => {
 
 // que pasa si uso app.use('/api', router); ?
 app.use(router);
+
+const puerto = 8080;
 
 // pongo a escuchar el servidor en el puerto indicado
 const server = app.listen(puerto, () => {
