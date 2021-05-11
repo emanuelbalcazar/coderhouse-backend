@@ -1,0 +1,28 @@
+<%- include('./encabezado')-%>
+
+    <body>
+        <div class="container mt-3">
+            <div class="jumbotron">
+                <h1 style="color:blue;">Ingrese datos</h1>
+                <br>
+
+                <form action="/datos" method="post">
+
+                    <div class="form-group">
+                        <label for="nombre"><b>Nombre</b></label>
+                        <input id="nombre" class="form-control" type="text" name="nombre">
+                    </div>
+
+                    <!-- TODO agregar los campos faltantes: apellido y edad (como numero) -->
+
+                    <button class="btn btn-success mt-3 mb-5">Enviar</button>
+                </form>
+
+                <h2 style="color:crimson;">Historial</h2>
+                <!-- TODO incluir el partial: tabla -->
+
+            </div>
+        </div>
+    </body>
+
+    </html>

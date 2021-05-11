@@ -1,0 +1,7 @@
+extends layout
+
+block medidor
+    h1(style="color:blue;")!= titulo
+    span= min + " "
+    meter(value=nivel min=min max=max style="width:25%;height:20px")
+    span= " " + max

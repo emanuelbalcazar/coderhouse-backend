@@ -1,0 +1,38 @@
+<html lang="es">
+
+<head>
+    <%- include('./partials/head') -%>
+</head>
+
+<body class="container">
+
+    <header>
+        <%- include('./partials/header') -%>
+    </header>
+
+    <main>
+        <div class="">
+            <% if (mensaje) { %>
+                <%= mensaje %>
+            <% } %>
+        </div>
+
+        <ul>
+            <% mascotas.forEach(mascota=> { %>
+                <li>
+                    <strong>
+                        <%= mascota.nombre %> representa a <%= mascota.organizacion %>, nacimiento: <%= mascota.nacimiento
+                                    %>
+                    </strong>
+                </li>
+                <% }) %>
+        </ul>
+    </main>
+
+    <footer>
+        <%- include('./partials/footer') -%>
+    </footer>
+
+</body>
+
+</html>

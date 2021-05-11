@@ -1,0 +1,26 @@
+<!-- TODO verificar si hay personas, sino mostrar una alerta -->
+<div class="table-responsive">
+    <table class="table table-dark">
+        <tr style="color: yellow;">
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+        </tr>
+        <%personas.forEach(function(persona) {%>
+            <tr>
+                <td>
+                    <%=persona.nombre%>
+                </td>
+                <td>
+                    <%=persona.apellido%>
+                </td>
+                <td>
+                    <%=persona.edad%>
+                </td>
+            </tr>
+            <%});%>
+    </table>
+
+    <h3 class="alert alert-danger">no se encontraron datos</h1>
+
+</div>
