@@ -11,7 +11,7 @@ app.set('views', './views');
 app.set('view engine', 'pug');
 
 app.get('/', (req, res) => {
-    res.render('partial.pug', { mensaje: 'Usando Pub JS desde express'});
+    res.render('hello.pug', { mensaje: 'Usando Pub JS desde express'});
 });
 
 app.get('/urlparams', (req, res) => {

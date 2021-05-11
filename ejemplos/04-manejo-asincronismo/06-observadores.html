@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <button id="button">Presionar</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.6.7/rxjs.umd.js"></script>
+
+    <script>
+
+        // importar la libreria
+        const { fromEvent } = rxjs;
+
+        // obtengo el boton mediante su ID
+        const $button = document.getElementById('button');
+
+        // creo el evento usando rxjs, le paso el boton y el evento
+        const click$ = fromEvent($button, 'click');
+
+        // me subscribo al evento, cada vez que ocurra, me devuelve los datos del evento
+        const subscription = click$.subscribe((event) => {
+            console.log('Event :', event);
+        });
+
+        // cuando pasen 5 segs, me desubscribo
+        setTimeout(() => {
+            subscription.unsubscribe();
+        }, 5000);
+
+    </script>
+
+</body>
+
+</html>

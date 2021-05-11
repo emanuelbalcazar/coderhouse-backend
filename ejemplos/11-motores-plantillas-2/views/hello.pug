@@ -1,7 +1,6 @@
-html 
-    head 
-        title="Mi primera plantilla Pug JS"
-    body 
-        h1=mensaje
-        hr
-        block partial
+extends layout
+
+block partial 
+    body
+        h2(style="color:red")!="Vengo de otro archivo"
+    
