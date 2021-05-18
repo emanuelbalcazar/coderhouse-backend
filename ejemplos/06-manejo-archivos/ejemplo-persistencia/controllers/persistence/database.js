@@ -3,8 +3,12 @@ class Database {
     constructor() { }
 
     async store(data) {
-        console.log('> database store:', data);
-        return data;
+        try {
+            console.log('> database store:', data);
+            return data;
+        } catch (error) {
+            throw error;
+        }
     }
 }
 
