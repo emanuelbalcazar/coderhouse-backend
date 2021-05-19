@@ -1,0 +1,26 @@
+.mensaje-cyan {
+    color : cyan;
+}
+
+.mensaje-yellow {
+    color : yellow;
+}
+
+.bg-color {
+    background-color: black;
+}
+
+.subbg-color {
+    background-color: rgb(29, 29, 29);
+    color: rgb(255,255,255);
+    margin: 16px;
+    height: 2000px;
+}
+
+.canvas-color {
+    background-color: rgb(255, 255, 255);
+}
+
+.button-pad {
+    margin: 10pt;
+}
