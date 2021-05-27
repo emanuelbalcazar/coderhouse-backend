@@ -1,0 +1,1 @@
+console.log('Soy el archivo index2.js');
