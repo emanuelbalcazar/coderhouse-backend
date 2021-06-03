@@ -1,0 +1,23 @@
+{
+  "name": "entregable",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index",
+    "dev": "nodemon ./src",
+    "migrate": "node ./src/database/migracion",
+    "drop": "node ./src/database/drop",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "knex": "^0.95.6",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "sqlite3": "^5.0.2"
+  }
+}
