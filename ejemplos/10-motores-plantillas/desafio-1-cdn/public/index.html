@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos Personales Frontend</title>
+    <!-- Include Handlebars from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+</head>
+
+<body>
+
+    <div></div>
+
+    <script>
+        // compile the template
+        var template = Handlebars.compile(`
+            <h1>Datos Personales</h1>
+            <ul>
+                <li>{{nombre}}</li>
+                <li>{{apellido}}</li>
+                <li>{{edad}}</li>
+                <li>{{email}}</li>
+                <li>{{telefono}}</li>
+                <li>{{fyh}}</li>
+            </ul>
+        `)
+        // execute the compiled template and print the output to the console
+        document.querySelector('div').innerHTML = template({
+            nombre: 'Daniel',
+            apellido: 'Sánchez',
+            edad: 52,
+            email: 'danielsanchez68@hotmail.com ',
+            telefono: '1559607538',
+            fyh: new Date().toLocaleString()
+        })
+    </script>
+
+</body>
+
+</html>
