@@ -1,0 +1,44 @@
+// borra una colección y sus respectivos indices
+db.coll.drop()
+
+// elimina la base de datos actual
+db.dropDatabase()
+
+// crea una nueva colección
+db.createCollection("contactos")
+
+// muestra estadisticas del uso de la base
+db.coll.stats()
+
+// muestra el tamaño de almacenamiento de la coleccion
+db.coll.storageSize()
+
+// muestra el tamaño total de todos los indices de la coleccion
+db.coll.totalIndexSize()
+
+// muestra el tamaño total en bytes de los datos de la coleccion mas el tamaño de los indices
+db.coll.totalSize()
+
+// verifica la integridad de la coleccion
+db.coll.validate({full: true})
+
+// renombra la coleccion, el 2do parametro elimina la coleccion destino si existe
+db.coll.renameCollection("nuevo_nombre", true)
+
+// inserta un documento en la coleccion
+db.coll.insertOne({clave: valor})
+
+// inserta multiples documento en la coleccion
+db.coll.insert([{}, {}, {}])
+
+// busca un solo documento 
+db.coll.findOne()
+
+// devuelve todos los documentos con un maximo de 20 resultados
+db.coll.find()
+
+// busca los documentos que cumplan con lo indicado, es un AND implicito
+db.coll.find({name: "Max", age: 32})
+
+// devuelve la cantidad de documentos encontrados en una coleccion
+db.coll.count({clave: valor})

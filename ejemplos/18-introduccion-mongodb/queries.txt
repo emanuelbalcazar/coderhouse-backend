@@ -1,0 +1,16 @@
+// escribir en la consola de su sistema operativo el comando "mongo"
+
+// muestra las bases de datos
+show dbs;
+
+// selecciona la base de datos a utilizar, si no existe la crea
+use mibase
+
+// muestra la lista de colecciones de la base
+show collections
+
+// crea una coleccion de manera implicita e inserta un documento
+db.personas.insert({clave: valor})
+
+// busca todos los documentos de la coleccion persona
+db.personas.find()
