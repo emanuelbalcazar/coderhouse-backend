@@ -21,13 +21,7 @@ app.engine('cte', (filePath, options, cb) => { // define the template engine
 app.set('views', './views'); // specify the views directory
 app.set('view engine', 'cte'); // register the template engine
 
-app.get('/cte1', (req, res) => {
-    res.render('plantilla1', { titulo: 'Custom Template Engine', mensaje: 'Lorem ipsum ...', autor: 'DS', version: 12345 });
-});
-
-app.get('/cte2', (req, res) => {
-    res.render('plantilla2', { nombre: 'Daniel', apellido: 'Sánchez', FyH: new Date().toLocaleString() });
-});
+// TODO completar con las rutas /cte1 y /cte2
 
 /* ------------------------------------------------------ */
 /* Server Listen */
