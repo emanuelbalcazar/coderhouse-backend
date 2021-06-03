@@ -1,6 +1,5 @@
 {
-  "type": "module",
-  "name": "1",
+  "name": "desafio-1-cdn",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
