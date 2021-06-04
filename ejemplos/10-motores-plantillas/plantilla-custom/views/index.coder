@@ -1,0 +1,5 @@
+<link rel="stylesheet" href="/estilos.css">
+
+<h2>#title#</h2>
+#message#
+Hoy es: <h1> #day# </h1>
