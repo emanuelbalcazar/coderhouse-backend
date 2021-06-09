@@ -10,7 +10,7 @@ const messages = [
 ];
 
 // indicamos donde se encuentran los archivos estaticos
-app.use(express.static('./public'));
+app.use(express.static(__dirname + '/public'));
 
 // en caso de conexion, emito los mensajes ya existentes
 io.on('connection', socket => {
