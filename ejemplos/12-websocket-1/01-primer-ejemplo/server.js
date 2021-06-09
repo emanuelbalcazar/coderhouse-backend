@@ -6,11 +6,11 @@ const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
 // indicamos donde se encuentran los archivos estaticos
-app.use(express.static('./public'));
+app.use(express.static(__dirname + '/public'));
 
 // envio a renderizar el html en la raiz de la misma
 app.get('/', (req, res) => {
-    res.sendFile('index', { root: __dirname });
+    res.sendFile('index');
 });
 
 // cuando se realice la conexion, se ejecutara una sola vez
