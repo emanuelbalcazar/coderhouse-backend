@@ -6,7 +6,7 @@
  * AVISO: No se permite usar variables globales ni contadores para mantener el contador.
  */
 function obtenerRandom(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function* hacerID() {

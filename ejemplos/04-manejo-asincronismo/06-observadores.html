@@ -18,15 +18,15 @@
         // obtengo el boton mediante su ID
         const $button = document.getElementById('button');
 
-        // creo el evento usando rxjs, le paso el boton y el evento
+        // creo el evento usando rxjs, le paso el boton y el evento y esto me devuelve un observable
         const click$ = fromEvent($button, 'click');
 
-        // me subscribo al evento, cada vez que ocurra, me devuelve los datos del evento
+        // al observable le agrego un subscriptor que imprime el evento
         const subscription = click$.subscribe((event) => {
             console.log('Event :', event);
         });
 
-        // cuando pasen 5 segs, me desubscribo
+        // cuando pasen 5 segs, desubscribo al subscriptor
         setTimeout(() => {
             subscription.unsubscribe();
         }, 5000);

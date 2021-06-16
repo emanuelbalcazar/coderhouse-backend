@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <div>DIV #1</div>
+    <p>PARRAFO</p>
+    <div>DIV #2</div>
+    <p>PARRAFO</p>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.6.7/rxjs.umd.js"></script>
+
+    <script>
+
+        // importar la libreria
+        const { fromEvent } = rxjs;
+        const { filter } = rxjs.operators
+
+        /* fromEvent crea un observable */
+        const clicks = fromEvent(document, 'click');
+
+        const clicksOnDivs = clicks.pipe(filter(event => event.target.tagName == 'DIV'));
+
+        /* subscribe el observable a un evento */
+        clicksOnDivs.subscribe(x => console.log(x));
+
+    </script>
+
+</body>
+
+</html>
