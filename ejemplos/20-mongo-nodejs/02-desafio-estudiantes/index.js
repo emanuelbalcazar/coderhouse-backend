@@ -4,12 +4,8 @@ const config = require('./config.json');
 const estudiantes = require('./estudiantes.json');
 
 async function cargar() {
-
     await mongoose.connect(config.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true });
     console.log('conexion a la base de datos realizada!');
-
-    await estudiante.insertMany(estudiantes);
-    console.log(`se cargaron ${estudiantes.length} estudiantes`);
 }
 
 async function lectura() {
