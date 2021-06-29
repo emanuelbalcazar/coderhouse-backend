@@ -17,4 +17,4 @@ const sqlite3 = {
     useNullAsDefault: true
 }
 
-module.exports = sqlite3;
+module.exports = mysql;
