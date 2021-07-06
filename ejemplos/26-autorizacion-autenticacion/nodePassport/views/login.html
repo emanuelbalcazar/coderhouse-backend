@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Login</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+      <div class="container my-5">
+
+        <h1>LOGIN</h1>
+        <br>
+        <form class="form" role="form" action="/login" method="post" autocomplete="off">
+
+          <div class="form-group">
+              <input name='username' placeholder="Nombre" class="form-control" type="text" required>
+          </div>
+          <div class="form-group">
+              <input name='password' placeholder="Password" class="form-control" type="password" required>
+          </div>
+
+          <div class="form-group">
+            <input class="btn btn-success my-3" type="submit" value="Login">
+          </div>
+        </form>
+
+        <hr>
+        <div class="text-center"></div>
+          <button class="btn btn-success my-3" onclick="goSignup()">SIGNUP</button>
+        </div>
+
+      </div>
+  </div>
+
+  <script>
+    function redireccionar(pagina) {
+        location.href = pagina;
+    } 
+
+    function goSignup() {
+      redireccionar('/signup');
+    }
+  </script>
+
+
+
+</body>
+
+</html>
+

@@ -1,0 +1,22 @@
+<div class="container text-center my-3">
+    <div class="jumbotron" style="background-color: green;color: white;">
+        <h1>USER OK LOGIN!</h1>
+        <h2><i>Bienvenido {{usuario}}</i></h2>
+        <br>
+        <h3>Nombre: {{nombre}}</h3>
+        <h3>Apellido: {{apellido}}</h3>
+        <h3>Email: {{email}}</h3>
+        <button class="btn btn-danger my-5" onclick="logout()">LOGOUT</button>
+    </div>
+</div>
+
+<script>
+    function redireccionar(pagina) {
+        location.href = pagina;
+    } 
+
+    function logout() {
+        console.log('logout');
+        redireccionar('/logout')
+    }
+</script>
