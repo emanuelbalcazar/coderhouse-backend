@@ -18,7 +18,9 @@ app.use((err, req, res, next) => {
 });
 
 const usersRouter = require('./routes/users');
+const messagesRouter = require('./routes/messages');
 app.use('/api', usersRouter);
+app.use('/api', messagesRouter);
 
 // obtengo el puerto del enviroment o lo seteo por defecto
 const PORT = process.env.PORT || config.PORT;

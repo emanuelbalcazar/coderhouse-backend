@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const controller = require('../api/users');
+const controller = require('../api/messages');
 
-router.get('/users', async (req, res) => {
+router.get('/messages', async (req, res) => {
     try {
         let result = await controller.findAll();
         return res.json(result);
@@ -11,7 +11,7 @@ router.get('/users', async (req, res) => {
     }
 });
 
-router.get('/users/:id', async (req, res) => {
+router.get('/messages/:id', async (req, res) => {
     try {
         let result = await controller.findById(req.params.id);
         return res.json(result);
@@ -20,7 +20,7 @@ router.get('/users/:id', async (req, res) => {
     }
 });
 
-router.post('/users', async (req, res) => {
+router.post('/messages', async (req, res) => {
     try {
         let result = await controller.create(req.body);
         return res.json(result);
@@ -29,7 +29,7 @@ router.post('/users', async (req, res) => {
     }
 });
 
-router.put('/users/:id', async (req, res) => {
+router.put('/messages/:id', async (req, res) => {
     try {
         let result = await controller.update(req.params.id, req.body);
         return res.json(result);
@@ -38,7 +38,7 @@ router.put('/users/:id', async (req, res) => {
     }
 });
 
-router.delete('/users/:id', async (req, res) => {
+router.delete('/messages/:id', async (req, res) => {
     try {
         let result = await controller.delete(req.params.id);
         return res.json(result);

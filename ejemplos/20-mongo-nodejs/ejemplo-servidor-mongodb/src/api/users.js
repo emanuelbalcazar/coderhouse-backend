@@ -1,8 +1,11 @@
 const User = require('../models/user');
+const MongoCRUD = require('../repository/crud');
 
 class UsersController {
 
-    constructor() {}
+    constructor() {
+        //super(User);
+    }
 
     async findAll() {
         return await User.find({});
