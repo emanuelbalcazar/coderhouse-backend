@@ -7,7 +7,7 @@ const schema = mongoose.Schema({
     dni: { type: String, unique: true },
     curso: { type: String, require: true, max: 100 },
     nota: { type: Number, require: true }
-});
+}, {strict: false});
 
 const Estudiante = mongoose.model('estudiantes', schema);
 
