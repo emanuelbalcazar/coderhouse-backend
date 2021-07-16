@@ -1,0 +1,16 @@
+{
+  "name": "afterclass-sql-fk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "01-crear_tablas.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "knex": "^0.95.7",
+    "mysql": "^2.18.1"
+  }
+}
