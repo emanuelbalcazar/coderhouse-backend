@@ -1,86 +1,66 @@
 const express = require('express')
-const cookieParser = require('cookie-parser')
-const session = require('express-session')
-/* ----------------------------------------------------- */
-/*           Persistencia por redis database             */
-/* https://github.com/microsoftarchive/redis/releases */
-/* ----------------------------------------------------- */
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+
 const redis = require('redis')
-const client = redis.createClient()
+const client = redis.createClient();
 const RedisStore = require('connect-redis')(session)
-/* ----------------------------------------------------- */
 
 const app = express()
 app.use(cookieParser())
 app.use(session({
-    /* ----------------------------------------------------- */
-    /*           Persistencia por redis database             */
-    /* ----------------------------------------------------- */
     store: new RedisStore({
         host: 'localhost',
         port: 6379,
         client: client,
         ttl: 300
     }),
-    /* ----------------------------------------------------- */
-
-    secret: 'shhhhhhhhhhhhhhhhhhhhh',
+    secret: 'secret',
     resave: false,
-    saveUninitialized: false/* ,
-    cookie: {
-        maxAge: 40000
-    } */
+    saveUninitialized: false
 }))
 
-app.get('/', (req,res) => {
+app.get('/', (req, res) => {
     res.send('Servidor express ok!')
 })
 
-let contador = 0
-app.get('/sin-session', (req,res) => {
+let contador = 0;
+
+app.get('/sin-session', (req, res) => {
     res.send({ contador: ++contador })
 })
 
-app.get('/con-session', (req,res) => {
-    if(req.session.contador) {
+app.get('/con-session', (req, res) => {
+    if (req.session.contador) {
         req.session.contador++
         res.send(`Ud ha visitado el sitio ${req.session.contador} veces.`)
-    }
-    else {
+    } else {
         req.session.contador = 1
         res.send('Bienvenido!')
     }
 })
 
-app.get('/logout', (req,res) => {
-    req.session.destroy( err => {
-        if(!err) res.send('Logout ok!')
-        else res.send({status: 'Logout ERROR', body: err})
+app.get('/logout', (req, res) => {
+    req.session.destroy(err => {
+        if (!err)
+            res.send('Logout ok!')
+        else 
+            res.send({ status: 'Logout ERROR', body: err })
     })
 })
 
-app.get('/info', (req,res) => {
-    console.log('------------ req.session -------------')
-    console.log(req.session)
-    console.log('--------------------------------------')
+app.get('/info', (req, res) => {
+    console.log('session', req.session)
+    console.log('sessionID', req.sessionID)
+    console.log('cookies', req.cookies)
+    console.log('sessionStore', req.sessionStore)
 
-    console.log('----------- req.sessionID ------------')
-    console.log(req.sessionID)
-    console.log('--------------------------------------')
-
-    console.log('----------- req.cookies ------------')
-    console.log(req.cookies)
-    console.log('--------------------------------------')
-
-    console.log('---------- req.sessionStore ----------')
-    console.log(req.sessionStore)
-    console.log('--------------------------------------')
-
-    res.send('Send info ok!')
+    res.send('Send info ok!');
 })
 
-const PORT = 8080
+const PORT = 8080;
+
 app.listen(PORT, () => {
-    console.log(`Servidor express escuchando en el puerto ${PORT}`)
+    console.log(`Servidor express con redis escuchando en http://localhost:${PORT}`)
 })
 
