@@ -1,4 +1,5 @@
 const { normalize, schema } = require('normalizr');
+const fs = require('fs');
 
 const blogPost = {
     "id": 1,
@@ -40,3 +41,4 @@ const article = new schema.Entity('articles', {
 // creamos el objeto normalizado
 const normalizedData = normalize(blogPost, article);
 console.log(JSON.stringify(normalizedData, null, 3));
+fs.writeFileSync('./normalizado.json', JSON.stringify(normalizedData, null, 3));

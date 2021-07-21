@@ -1,0 +1,36 @@
+{
+   "entities": {
+      "users": {
+         "1": {
+            "id": 1,
+            "name": "John Doe"
+         }
+      },
+      "comments": {
+         "1": {
+            "id": 1,
+            "author": "Rob",
+            "content": "Nice post!"
+         },
+         "2": {
+            "id": 2,
+            "author": "Jane",
+            "content": "I totally agree with you"
+         }
+      },
+      "articles": {
+         "1": {
+            "id": 1,
+            "title": "My blogspot",
+            "description": "Short description",
+            "content": "Hello word",
+            "author": 1,
+            "comments": [
+               1,
+               2
+            ]
+         }
+      }
+   },
+   "result": 1
+}
