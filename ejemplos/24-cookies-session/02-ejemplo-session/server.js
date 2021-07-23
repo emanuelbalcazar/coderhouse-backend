@@ -15,9 +15,9 @@ app.get('/', (req, res) => {
     res.send('Servidor express ok!')
 })
 
-let contador = 0;
 
 app.get('/sin-session', (req, res) => {
+    let contador = 0;
     res.send({ contador: ++contador })
 })
 
