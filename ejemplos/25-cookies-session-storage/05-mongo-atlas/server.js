@@ -10,7 +10,7 @@ app.use(cookieParser())
 app.use(session({
     store: MongoStore.create({
         //En Atlas connect App :  Make sure to change the node version to 2.2.12:
-        mongoUrl: 'mongodb://daniel:daniel123@cluster0-shard-00-00.nfdif.mongodb.net:27017,cluster0-shard-00-01.nfdif.mongodb.net:27017,cluster0-shard-00-02.nfdif.mongodb.net:27017/sesiones?ssl=true&replicaSet=atlas-bwvi2w-shard-0&authSource=admin&retryWrites=true&w=majority',
+        mongoUrl: 'mongodb+srv://root:root@cluster0.1w8lp.mongodb.net/sessiones?retryWrites=true&w=majority',
         mongoOptions: advancedOptions
     }),
     secret: 'secret',

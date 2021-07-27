@@ -1,0 +1,4 @@
+{
+    "PORT": 8080,
+    "STORAGE": "mongo-atlas"
+}
