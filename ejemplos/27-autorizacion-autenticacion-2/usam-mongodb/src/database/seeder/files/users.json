@@ -1,0 +1,47 @@
+{
+    "users": [
+        {
+            "name": "Administrador",
+            "surname": "Usam",
+            "userName": "admin",
+            "password": "mkonji0987",
+            "role": "administrador"
+        },
+        {
+            "name": "Henry",
+            "surname": "Tong",
+            "userName": "htong",
+            "password": "htong",
+            "role": "desarrollador"
+        },
+        {
+            "name": "Emanuel",
+            "surname": "Balcazar",
+            "userName": "ebalcazar",
+            "password": "ebalcazar",
+            "email": "emanuelbalcazar13@gmail.com",
+            "role": "desarrollador"
+        },
+        {
+            "name": "Esteban",
+            "surname": "Nesci",
+            "userName": "enesci",
+            "password": "Onychito",
+            "role": "administrador"
+        },
+        {
+            "name": "Candela",
+            "surname": "Nesci",
+            "userName": "candela",
+            "password": "MariTern",
+            "role": "estandar"
+        },
+        {
+            "name": "Felicia",
+            "surname": "Usam",
+            "userName": "felicia",
+            "password": "latinoamericaaa",
+            "role": "estandar"
+        }
+    ]
+}

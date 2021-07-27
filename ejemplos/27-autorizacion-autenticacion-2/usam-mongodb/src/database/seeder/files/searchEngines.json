@@ -1,0 +1,98 @@
+{
+    "engines": [
+        {
+            "name": "Google",
+            "description": "Motor de búsqueda personalizado de Google",
+            "source": "google",
+            "module": "./google/google.js",
+            "active": true,
+            "templates": [
+                {
+                    "name": "Buscar",
+                    "description": "Buscar en Google",
+                    "source": "google",
+                    "method": "GET",
+                    "url": "https://www.googleapis.com/customsearch/v1?",
+                    "resource": "",
+                    "resourceParams": [],
+                    "queryParams": [
+                        {
+                            "key": "q",
+                            "value": "",
+                            "required": true,
+                            "disabled": false,
+                            "label": "Expresión de búsqueda",
+                            "type": "text"
+                        },
+                        {
+                            "key": "cx",
+                            "value": "016238189032549234631:vwjjewphbtu",
+                            "required": true,
+                            "disabled": true,
+                            "label": "ID del buscador personalizado",
+                            "type": "text",
+                            "hidden": true
+                        },
+                        {
+                            "key": "dateRestrict",
+                            "value": "",
+                            "required": false,
+                            "disabled": false,
+                            "label": "Restringir por fecha",
+                            "type": "text"
+                        },
+                        {
+                            "key": "exactTerms",
+                            "value": "",
+                            "required": false,
+                            "disabled": false,
+                            "label": "Palabras obligatorias",
+                            "type": "text"
+                        },
+                        {
+                            "key": "excludeTerms",
+                            "value": "",
+                            "required": false,
+                            "disabled": false,
+                            "label": "Palabras excluidas",
+                            "type": "text"
+                        },
+                        {
+                            "key": "key",
+                            "value": "AIzaSyDplbVkgEQbkMCQhfzK1qo5ehVMgx_j1yo",
+                            "required": true,
+                            "disabled": true,
+                            "label": "Clave de acceso a Google",
+                            "type": "text",
+                            "hidden": true
+                        },
+                        {
+                            "key": "num",
+                            "value": 10,
+                            "required": false,
+                            "disabled": false,
+                            "label": "Cantidad de resultados",
+                            "type": "number"
+                        },
+                        {
+                            "key": "siteSearch",
+                            "value": "",
+                            "required": false,
+                            "disabled": false,
+                            "label": "Solo buscar en la página",
+                            "type": "url"
+                        },
+                        {
+                            "key": "siteSearchFilter",
+                            "value": "i",
+                            "required": true,
+                            "disabled": true,
+                            "label": "Incluir resultados de la página",
+                            "type": "text"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

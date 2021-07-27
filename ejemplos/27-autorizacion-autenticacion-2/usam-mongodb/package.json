@@ -1,0 +1,44 @@
+{
+    "name": "usam-mongodb",
+    "version": "1.0.0",
+    "description": "",
+    "main": "run.js",
+    "scripts": {
+        "start": "node ./src/run.js",
+        "seed": "node ./src/database/seeder/seeder.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "usam team",
+    "license": "ISC",
+    "dependencies": {
+        "amqplib": "^0.5.2",
+        "async": "^2.6.1",
+        "bcryptjs": "^2.4.3",
+        "body-parser": "^1.18.2",
+        "compression": "^1.7.1",
+        "express": "^4.16.2",
+        "helmet": "^3.12.1",
+        "http-status": "^1.0.1",
+        "jsonwebtoken": "^8.2.0",
+        "mongoose": "^5.3.9",
+        "mongoose-paginate": "^5.0.3",
+        "natural": "^0.6.1",
+        "node-tokenizer": "0.0.0",
+        "request": "^2.83.0",
+        "require-all": "^2.2.0",
+        "shortid": "^2.2.13",
+        "stopword": "^0.1.13",
+        "watson-developer-cloud": "^3.12.0",
+        "wordcloud": "^1.1.0"
+    },
+    "devDependencies": {
+        "grunt": "^1.0.1",
+        "grunt-cli": "^1.2.0",
+        "grunt-contrib-jshint": "^1.1.0",
+        "grunt-contrib-watch": "^1.1.0",
+        "grunt-nodemon": "^0.4.2",
+        "grunt-shell": "^2.1.0",
+        "jshint-stylish": "^2.2.1",
+        "time-grunt": "^1.4.0"
+    }
+}

@@ -1,0 +1,68 @@
+{
+    "vips": [
+        {
+            "name": "Mauricio Macri",
+            "description": "Presidente de la nacion Argentina",
+            "accounts": [
+                {
+                    "source": "twitter",
+                    "profile": "mauriciomacri",
+                    "url": "https://twitter.com/mauriciomacri?lang=es"
+                },
+                {
+                    "source": "facebook",
+                    "profile": "mauriciomacri",
+                    "url": "https://www.facebook.com/mauriciomacri/"
+                }
+            ]
+        },
+        {
+            "name": "Cristina Kirchner",
+            "description": "Militante peronista, Senadora Nacional, Presidenta mandato cumplido.",
+            "accounts": [
+                {
+                    "source": "twitter",
+                    "profile": "CFKArgentina",
+                    "url": "https://twitter.com/cfkargentina"
+                },
+                {
+                    "source": "facebook",
+                    "profile": "CFKArgentina",
+                    "url": "https://www.facebook.com/CFKArgentina/"
+                }
+            ]
+        },
+        {
+            "name": "Sergio Massa",
+            "description": "Abogado. Dirigente del Frente Renovador.",
+            "accounts": [
+                {
+                    "source": "twitter",
+                    "profile": "SergioMassa",
+                    "url": "https://twitter.com/sergiomassa"
+                },
+                {
+                    "source": "facebook",
+                    "profile": "SergioMassaOK",
+                    "url": "https://es-la.facebook.com/SergioMassaOK/"
+                }
+            ]
+        },
+        {
+            "name": "Samuel Doria Medina Auza",
+            "description": "Usuario Vip de Bolivia",
+            "accounts": [
+                {
+                    "source": "twitter",
+                    "profile": "@SDoriaMedina",
+                    "url": "https://twitter.com/sdoriamedina?lang=es"
+                },
+                {
+                    "source": "facebook",
+                    "profile": "SamuelDoriaMedina.BO",
+                    "url": "https://www.facebook.com/SamuelDoriaMedina.BO/"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,252 @@
+{
+    "extractors": [
+        {
+            "name": "Noticias",
+            "description": "Extractor de Noticias",
+            "source": "articles",
+            "module": "./articles/articles.js",
+            "active": true,
+            "templates": [
+                {
+                    "name": "Noticias",
+                    "source": "articles",
+                    "method": "GET",
+                    "url": "",
+                    "resource": "",
+                    "resolver": "/resolvers/news/index.js",
+                    "label": "Noticias en Internet",
+                    "resourceParams": [],
+                    "queryParams": [
+                        {
+                            "key": "link",
+                            "value": "",
+                            "required": true,
+                            "disabled": false,
+                            "label": "URL del articulo",
+                            "type": "url"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Twitter",
+            "description": "Extractor de Twitter",
+            "source": "twitter",
+            "module": "./twitter/twitter.js",
+            "active": true,
+            "templates": [
+                {
+                    "name": "Publicaciones",
+                    "source": "twitter",
+                    "method": "GET",
+                    "url": "",
+                    "resource": "/statuses/user_timeline.json",
+                    "resolver": "/resolvers/timeline/index.js",
+                    "label": "Tweets mas recientes del usuario en su timeline",
+                    "resourceParams": [],
+                    "queryParams": [
+                        {
+                            "key": "screen_name",
+                            "value": "",
+                            "required": false,
+                            "disabled": false,
+                            "label": "Nombre de usuario",
+                            "type": "text"
+                        },
+                        {
+                            "key": "count",
+                            "value": 10,
+                            "required": false,
+                            "disabled": false,
+                            "label": "Cantidad de tweets",
+                            "type": "number"
+                        },
+                        {
+                            "key": "include_rts",
+                            "value": true,
+                            "required": false,
+                            "disabled": false,
+                            "label": "¿Incluir retweets?",
+                            "type": "boolean"
+                        },
+                        {
+                            "key": "exclude_replies",
+                            "value": "false",
+                            "required": false,
+                            "disabled": false,
+                            "label": "¿Excluir respuestas?",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                {
+                    "name": "Buscar Tweets Por Palabras",
+                    "source": "twitter",
+                    "method": "GET",
+                    "url": "",
+                    "resource": "/search/tweets.json",
+                    "resolver": "/resolvers/search/index.js",
+                    "label": "Buscar tweets por palabras clave",
+                    "resourceParams": [],
+                    "queryParams": [
+                        {
+                            "key": "q",
+                            "value": "",
+                            "required": true,
+                            "disabled": false,
+                            "label": "Busqueda",
+                            "type": "text"
+                        },
+                        {
+                            "key": "geocode",
+                            "value": "-42.7692,-65.03851,30km",
+                            "required": false,
+                            "disabled": true,
+                            "label": "Geolocalizacion: Solo en Puerto Madryn",
+                            "type": "text"
+                        },
+                        {
+                            "key": "lang",
+                            "value": "es",
+                            "required": false,
+                            "disabled": true,
+                            "label": "Lenguaje",
+                            "type": "text"
+                        },
+                        {
+                            "key": "result_type",
+                            "value": "recent",
+                            "required": false,
+                            "disabled": true,
+                            "label": "Tipo de respuestas",
+                            "type": "text"
+                        },
+                        {
+                            "key": "count",
+                            "value": 10,
+                            "required": false,
+                            "disabled": false,
+                            "label": "Cantidad",
+                            "type": "number"
+                        },
+                        {
+                            "key": "include_entities",
+                            "value": true,
+                            "required": false,
+                            "disabled": false,
+                            "label": "¿Incluir entidades?",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                {
+                    "name": "Buscar Tweets Por Hashtag",
+                    "source": "twitter",
+                    "method": "GET",
+                    "url": "",
+                    "resource": "/search/tweets.json",
+                    "resolver": "/resolvers/search/index.js",
+                    "label": "Buscar tweets por hashtag",
+                    "resourceParams": [],
+                    "queryParams": [
+                        {
+                            "key": "q",
+                            "value": "",
+                            "required": true,
+                            "disabled": false,
+                            "label": "Busqueda",
+                            "type": "text"
+                        },
+                        {
+                            "key": "geocode",
+                            "value": "",
+                            "required": false,
+                            "disabled": true,
+                            "label": "Geocoding",
+                            "type": "text"
+                        },
+                        {
+                            "key": "lang",
+                            "value": "es",
+                            "required": false,
+                            "disabled": true,
+                            "label": "Lenguaje",
+                            "type": "text"
+                        },
+                        {
+                            "key": "result_type",
+                            "value": "recent",
+                            "required": false,
+                            "disabled": true,
+                            "label": "Tipo de respuestas",
+                            "type": "text"
+                        },
+                        {
+                            "key": "count",
+                            "value": 10,
+                            "required": false,
+                            "disabled": false,
+                            "label": "Cantidad",
+                            "type": "number"
+                        },
+                        {
+                            "key": "include_entities",
+                            "value": true,
+                            "required": false,
+                            "disabled": true,
+                            "label": "¿Incluir entidades?",
+                            "type": "boolean"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Google Plus",
+            "description": "Extractor de Google Plus",
+            "source": "google-plus",
+            "module": "./google-plus/google-plus.js",
+            "active": true,
+            "templates": [
+                {
+                    "name": "Publicaciones",
+                    "description": "Publicaciones del usuario",
+                    "source": "google-plus",
+                    "method": "GET",
+                    "url": "https://www.googleapis.com/plus/v1",
+                    "resource": "/people/:userId/activities/public",
+                    "resolver": "/resolvers/activities/index",
+                    "label": "Publicaciones en Google Plus",
+                    "resourceParams": [
+                        {
+                            "key": "userId",
+                            "value": "",
+                            "required": true,
+                            "disabled": false,
+                            "label": "Usuario de Google+",
+                            "type": "text"
+                        }
+                    ],
+                    "queryParams": []
+                }
+            ]
+        },
+        {
+            "name": "Facebook",
+            "description": "",
+            "source": "facebook",
+            "module": "./facebook/facebook.js",
+            "active": false,
+            "templates": []
+        },
+        {
+            "name": "Linkedin",
+            "description": "",
+            "source": "linkedin",
+            "module": "./linkedin/linkedin.js",
+            "active": false,
+            "templates": []
+        }
+    ]
+}

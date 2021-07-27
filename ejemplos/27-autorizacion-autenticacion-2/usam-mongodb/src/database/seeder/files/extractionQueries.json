@@ -1,0 +1,356 @@
+{
+    "queries": [
+        {
+            "name": "Tweets de Mauricio Macri",
+            "description": "Extraccion de Tweets",
+            "method": "GET",
+            "url": "",
+            "resource": "/statuses/user_timeline.json",
+            "resolver": "/resolvers/timeline/index.js",
+            "label": "Tweets mas recientes del usuario en su timeline",
+            "propietary": "public",
+            "source": "twitter",
+            "resourceParams": [],
+            "queryParams": [
+                {
+                    "required": false,
+                    "label": "Nombre de usuario",
+                    "type": "text",
+                    "key": "screen_name",
+                    "value": "mauriciomacri",
+                    "disabled": false
+                },
+                {
+                    "required": false,
+                    "label": "Cantidad de tweets",
+                    "type": "number",
+                    "key": "count",
+                    "value": 10,
+                    "disabled": false
+                },
+                {
+                    "required": false,
+                    "label": "¿Incluir retweets?",
+                    "type": "boolean",
+                    "key": "include_rts",
+                    "value": true,
+                    "disabled": false
+                },
+                {
+                    "required": false,
+                    "label": "¿Excluir respuestas?",
+                    "type": "boolean",
+                    "key": "exclude_replies",
+                    "value": false,
+                    "disabled": false
+                }
+            ]
+        },
+        {
+            "name": "Tweets de Sergio Massa",
+            "description": "Extraccion de Tweets",
+            "method": "GET",
+            "url": "",
+            "resource": "/statuses/user_timeline.json",
+            "resolver": "/resolvers/timeline/index.js",
+            "label": "Tweets mas recientes del usuario en su timeline",
+            "propietary": "public",
+            "source": "twitter",
+            "resourceParams": [],
+            "queryParams": [
+                {
+                    "required": false,
+                    "label": "Nombre de usuario",
+                    "type": "text",
+                    "key": "screen_name",
+                    "value": "SergioMassa",
+                    "disabled": false
+                },
+                {
+                    "required": false,
+                    "label": "Cantidad de tweets",
+                    "type": "number",
+                    "key": "count",
+                    "value": 10,
+                    "disabled": false
+                },
+                {
+                    "required": false,
+                    "label": "¿Incluir retweets?",
+                    "type": "boolean",
+                    "key": "include_rts",
+                    "value": true,
+                    "disabled": false
+                },
+                {
+                    "required": false,
+                    "label": "¿Excluir respuestas?",
+                    "type": "boolean",
+                    "key": "exclude_replies",
+                    "value": false,
+                    "disabled": false
+                }
+            ]
+        },
+        {
+            "name": "Tweets de Cristina Kirchner",
+            "description": "Extraccion de Tweets",
+            "method": "GET",
+            "url": "",
+            "resource": "/statuses/user_timeline.json",
+            "resolver": "/resolvers/timeline/index.js",
+            "label": "Tweets mas recientes del usuario en su timeline",
+            "propietary": "public",
+            "source": "twitter",
+            "resourceParams": [],
+            "queryParams": [
+                {
+                    "required": false,
+                    "label": "Nombre de usuario",
+                    "type": "text",
+                    "key": "screen_name",
+                    "value": "CFKArgentina",
+                    "disabled": false
+                },
+                {
+                    "required": false,
+                    "label": "Cantidad de tweets",
+                    "type": "number",
+                    "key": "count",
+                    "value": 10,
+                    "disabled": false
+                },
+                {
+                    "required": false,
+                    "label": "¿Incluir retweets?",
+                    "type": "boolean",
+                    "key": "include_rts",
+                    "value": true,
+                    "disabled": false
+                },
+                {
+                    "required": false,
+                    "label": "¿Excluir respuestas?",
+                    "type": "boolean",
+                    "key": "exclude_replies",
+                    "value": false,
+                    "disabled": false
+                }
+            ]
+        },
+        {
+            "name": "Tweets de Samuel Doria Medina Auza",
+            "description": "Extraccion de Tweets",
+            "method": "GET",
+            "url": "",
+            "resource": "/statuses/user_timeline.json",
+            "resolver": "/resolvers/timeline/index.js",
+            "label": "Tweets mas recientes del usuario en su timeline",
+            "propietary": "public",
+            "source": "twitter",
+            "resourceParams": [],
+            "queryParams": [
+                {
+                    "required": false,
+                    "label": "Nombre de usuario",
+                    "type": "text",
+                    "key": "screen_name",
+                    "value": "@SDoriaMedina",
+                    "disabled": false
+                },
+                {
+                    "required": false,
+                    "label": "Cantidad de tweets",
+                    "type": "number",
+                    "key": "count",
+                    "value": 10,
+                    "disabled": false
+                },
+                {
+                    "required": false,
+                    "label": "¿Incluir retweets?",
+                    "type": "boolean",
+                    "key": "include_rts",
+                    "value": true,
+                    "disabled": false
+                },
+                {
+                    "required": false,
+                    "label": "¿Excluir respuestas?",
+                    "type": "boolean",
+                    "key": "exclude_replies",
+                    "value": false,
+                    "disabled": false
+                }
+            ]
+        },
+        {
+            "name": "Buscando Tweets por palabras clave",
+            "description": "Extraccion de Tweets por Palabras",
+            "method": "GET",
+            "url": "",
+            "resource": "/search/tweets.json",
+            "resolver": "/resolvers/search/index.js",
+            "label": "Buscar tweets por palabras o hashtag",
+            "propietary": "public",
+            "source": "twitter",
+            "resourceParams": [],
+            "queryParams": [
+                {
+                    "key": "q",
+                    "value": "macri",
+                    "required": true,
+                    "disabled": false,
+                    "label": "Busqueda",
+                    "type": "text"
+                },
+                {
+                    "key": "geocode",
+                    "value": "-42.7692,-65.03851,30km",
+                    "required": false,
+                    "disabled": true,
+                    "label": "Geolocalizacion: Solo en Puerto Madryn",
+                    "type": "text"
+                },
+                {
+                    "key": "lang",
+                    "value": "es",
+                    "required": false,
+                    "disabled": true,
+                    "label": "Lenguaje",
+                    "type": "text"
+                },
+                {
+                    "key": "result_type",
+                    "value": "recent",
+                    "required": false,
+                    "disabled": true,
+                    "label": "Tipo de respuestas",
+                    "type": "text"
+                },
+                {
+                    "key": "count",
+                    "value": 10,
+                    "required": false,
+                    "disabled": false,
+                    "label": "Cantidad",
+                    "type": "number"
+                },
+                {
+                    "key": "include_entities",
+                    "value": true,
+                    "required": false,
+                    "disabled": false,
+                    "label": "¿Incluir entidades?",
+                    "type": "boolean"
+                }
+            ]
+        },
+        {
+            "name": "Buscando Tweets por hashtag",
+            "description": "Extraccion de Tweets por Hashtag",
+            "method": "GET",
+            "url": "",
+            "resource": "/search/tweets.json",
+            "resolver": "/resolvers/search/index.js",
+            "label": "Buscar tweets por hashtag",
+            "propietary": "public",
+            "source": "twitter",
+            "resourceParams": [],
+            "queryParams": [
+                {
+                    "key": "q",
+                    "value": "#NiMacriNiCristina",
+                    "required": true,
+                    "disabled": false,
+                    "label": "Busqueda",
+                    "type": "text"
+                },
+                {
+                    "key": "geocode",
+                    "value": "",
+                    "required": false,
+                    "disabled": true,
+                    "label": "Geocoding",
+                    "type": "text"
+                },
+                {
+                    "key": "lang",
+                    "value": "es",
+                    "required": false,
+                    "disabled": true,
+                    "label": "Lenguaje",
+                    "type": "text"
+                },
+                {
+                    "key": "result_type",
+                    "value": "recent",
+                    "required": false,
+                    "disabled": true,
+                    "label": "Tipo de respuestas",
+                    "type": "text"
+                },
+                {
+                    "key": "count",
+                    "value": 10,
+                    "required": false,
+                    "disabled": false,
+                    "label": "Cantidad",
+                    "type": "number"
+                },
+                {
+                    "key": "include_entities",
+                    "value": true,
+                    "required": false,
+                    "disabled": false,
+                    "label": "¿Incluir entidades?",
+                    "type": "boolean"
+                }
+            ]
+        },
+        {
+            "name": "Ejemplo de Noticias",
+            "description": "Ejemplo de extraccion en noticias",
+            "method": "GET",
+            "url": "",
+            "resource": "",
+            "resolver": "/resolvers/news/index.js",
+            "label": "Noticias en Internet",
+            "source": "articles",
+            "propietary": "public",
+            "resourceParams": [],
+            "queryParams": [
+                {
+                    "required": true,
+                    "disabled": false,
+                    "label": "URL del articulo",
+                    "type": "url",
+                    "key": "link",
+                    "value": "https://www.lacapital.com.ar/politica/lifschitz-dijo-que-el-gobierno-nacional-tiene-que-revisar-las-politicas-materia-tarifaria-n1594954.html"
+                }
+            ]
+        },
+        {
+            "name": "Publicaciones en Google Plus",
+            "description": "Publicaciones en Google Plus de Ignacio Aita",
+            "method": "GET",
+            "url": "https://www.googleapis.com/plus/v1",
+            "resource": "/people/:userId/activities/public",
+            "resolver": "/resolvers/activities/index",
+            "label": "Publicaciones en Google Plus",
+            "source": "google-plus",
+            "propietary": "admin",
+            "resourceParams": [
+                {
+                    "required": true,
+                    "disabled": false,
+                    "label": "Usuario de Google+",
+                    "type": "text",
+                    "key": "userId",
+                    "value": "113461728674515585405"
+                }
+            ],
+            "queryParams": []
+        }
+    ]
+}

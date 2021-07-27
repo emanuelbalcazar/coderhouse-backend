@@ -1,0 +1,54 @@
+{
+    "groups": [
+        {
+            "_id": "5bb770b18213702870b901a6",
+            "name": "desarrollo",
+            "description": "Grupo de desarrollo de usam"
+        },
+        {
+            "_id": "5bb77309920e062c93c52755",
+            "name": "pruebas",
+            "description": "Grupo de pruebas de usam"
+        },
+        {
+            "_id": "5bb77309920e062c93c52757",
+            "name": "ingreso datos",
+            "description": "Grupo de ingreso de datos en grafos"
+        },
+        {
+            "_id": "5bb77309920e062c93c52759",
+            "name": "admin",
+            "description": "Grupo de administradores de usam"
+        },
+        {
+            "_id": "5bb77309920e062c93c5275a",
+            "name": "pabellon",
+            "description": "Grupo heredado de usam graph"
+        },
+        {
+            "_id": "5bb77309920e062c93c5275b",
+            "name": "cepa",
+            "description": "Grupo heredado de usam graph"
+        },
+        {
+            "_id": "5bb77309920e062c93c52758",
+            "name": "fpv",
+            "description": "Grupo heredado de usam graph"
+        },
+        {
+            "_id": "5bb77309920e062c93c5275c",
+            "name": "usamtel",
+            "description": "Grupo heredado de usam graph"
+        },
+        {
+            "_id": "5bb77309920e062c93c5275d",
+            "name": "invitados",
+            "description": "Grupo heredado de usam graph"
+        },
+        {
+            "_id": "5bb77309920e062c93c5275e",
+            "name": "periodistas",
+            "description": "Grupo heredado de usam graph"
+        }
+    ]
+}

@@ -1,0 +1,247 @@
+{
+    "queries": [
+        {
+            "name": "Busqueda Mauricio Macri",
+            "description": "Ejemplo de búsqueda de Mauricio Macri",
+            "source": "google",
+            "method": "GET",
+            "url": "https://www.googleapis.com/customsearch/v1?",
+            "resource": "",
+            "resourceParams": [],
+            "queryParams": [
+                {
+                    "key": "q",
+                    "value": "Mauricio Macri",
+                    "required": true,
+                    "label": "Expresión de búsqueda",
+                    "type": "text",
+                    "disabled": false
+                },
+                {
+                    "key": "cx",
+                    "value": "016238189032549234631:vwjjewphbtu",
+                    "required": true,
+                    "label": "ID del buscador personalizado",
+                    "type": "text",
+                    "disabled": true,
+                    "hidden": true
+                },
+                {
+                    "key": "dateRestrict",
+                    "value": "",
+                    "required": false,
+                    "label": "Restringir por fecha",
+                    "type": "text",
+                    "disabled": false
+                },
+                {
+                    "key": "exactTerms",
+                    "value": "",
+                    "required": false,
+                    "label": "Palabras obligatorias",
+                    "type": "text",
+                    "disabled": false
+                },
+                {
+                    "key": "excludeTerms",
+                    "value": "",
+                    "required": false,
+                    "label": "Palabras excluidas",
+                    "type": "text",
+                    "disabled": false
+                },
+                {
+                    "key": "key",
+                    "value": "AIzaSyDplbVkgEQbkMCQhfzK1qo5ehVMgx_j1yo",
+                    "required": true,
+                    "label": "Clave de acceso a Google",
+                    "type": "text",
+                    "disabled": true,
+                    "hidden": true
+                },
+                {
+                    "key": "num",
+                    "value": 10,
+                    "required": false,
+                    "label": "Cantidad de resultados",
+                    "type": "number",
+                    "disabled": false
+                },
+                {
+                    "key": "siteSearch",
+                    "value": "",
+                    "required": false,
+                    "label": "Solo buscar en la página",
+                    "type": "url",
+                    "disabled": false
+                },
+                {
+                    "key": "siteSearchFilter",
+                    "value": "i",
+                    "required": false,
+                    "label": "Incluir resultados de la página",
+                    "type": "text",
+                    "disabled": true
+                }
+            ]
+        },
+        {
+            "name": "HL7",
+            "description": "Ejemplo de búsqueda de HL7",
+            "source": "google",
+            "method": "GET",
+            "url": "https://www.googleapis.com/customsearch/v1?",
+            "resource": "",
+            "resourceParams": [],
+            "queryParams": [
+                {
+                    "key": "q",
+                    "value": "HL7",
+                    "required": true,
+                    "label": "Expresión de búsqueda",
+                    "type": "text"
+                },
+                {
+                    "key": "cx",
+                    "value": "016238189032549234631:vwjjewphbtu",
+                    "required": true,
+                    "label": "ID del buscador personalizado",
+                    "type": "text",
+                    "disabled": true,
+                    "hidden": true
+                },
+                {
+                    "key": "dateRestrict",
+                    "value": "",
+                    "required": false,
+                    "label": "Restringir por fecha",
+                    "type": "text"
+                },
+                {
+                    "key": "exactTerms",
+                    "value": "",
+                    "required": false,
+                    "label": "Palabras obligatorias",
+                    "type": "text"
+                },
+                {
+                    "key": "excludeTerms",
+                    "value": "",
+                    "required": false,
+                    "label": "Palabras excluidas",
+                    "type": "text"
+                },
+                {
+                    "key": "key",
+                    "value": "AIzaSyDplbVkgEQbkMCQhfzK1qo5ehVMgx_j1yo",
+                    "required": true,
+                    "label": "Clave de acceso a Google",
+                    "type": "text",
+                    "disabled": true,
+                    "hidden": true
+                },
+                {
+                    "key": "num",
+                    "value": 10,
+                    "required": false,
+                    "label": "Cantidad de resultados",
+                    "type": "number"
+                },
+                {
+                    "key": "siteSearch",
+                    "value": "",
+                    "required": false,
+                    "label": "Solo buscar en la página",
+                    "type": "url"
+                },
+                {
+                    "key": "siteSearchFilter",
+                    "value": "i",
+                    "required": false,
+                    "label": "Incluir resultados de la página",
+                    "type": "text",
+                    "disabled": true
+                }
+            ]
+        },
+        {
+            "name": "Samuel Doria Medina Auza",
+            "description": "Búsqueda de Samuel Doria Medina Auza",
+            "source": "google",
+            "method": "GET",
+            "url": "https://www.googleapis.com/customsearch/v1?",
+            "resource": "",
+            "resourceParams": [],
+            "queryParams": [
+                {
+                    "key": "q",
+                    "value": "Samuel Doria Medina Auza",
+                    "required": true,
+                    "label": "Expresión de búsqueda",
+                    "type": "text"
+                },
+                {
+                    "key": "cx",
+                    "value": "016238189032549234631:vwjjewphbtu",
+                    "required": true,
+                    "label": "ID del buscador personalizado",
+                    "type": "text",
+                    "disabled": true,
+                    "hidden": true
+                },
+                {
+                    "key": "dateRestrict",
+                    "value": "",
+                    "required": false,
+                    "label": "Restringir por fecha",
+                    "type": "text"
+                },
+                {
+                    "key": "exactTerms",
+                    "value": "",
+                    "required": false,
+                    "label": "Palabras obligatorias",
+                    "type": "text"
+                },
+                {
+                    "key": "excludeTerms",
+                    "value": "",
+                    "required": false,
+                    "label": "Palabras excluidas",
+                    "type": "text"
+                },
+                {
+                    "key": "key",
+                    "value": "AIzaSyDplbVkgEQbkMCQhfzK1qo5ehVMgx_j1yo",
+                    "required": true,
+                    "label": "Clave de acceso a Google",
+                    "type": "text",
+                    "disabled": true,
+                    "hidden": true
+                },
+                {
+                    "key": "num",
+                    "value": 10,
+                    "required": false,
+                    "label": "Cantidad de resultados",
+                    "type": "number"
+                },
+                {
+                    "key": "siteSearch",
+                    "value": "",
+                    "required": false,
+                    "label": "Solo buscar en la página",
+                    "type": "url"
+                },
+                {
+                    "key": "siteSearchFilter",
+                    "value": "i",
+                    "required": false,
+                    "label": "Incluir resultados de la página",
+                    "type": "text",
+                    "disabled": true
+                }
+            ]
+        }
+    ]
+}
