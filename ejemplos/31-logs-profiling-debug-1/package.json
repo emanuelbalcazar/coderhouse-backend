@@ -1,0 +1,19 @@
+{
+  "name": "31-logs-profiling-debug-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "01-gzip.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "compress": "^0.99.0",
+    "express": "^4.17.1",
+    "log4j": "^1.0.0",
+    "pino": "^6.13.0",
+    "winston": "^3.3.3"
+  }
+}
