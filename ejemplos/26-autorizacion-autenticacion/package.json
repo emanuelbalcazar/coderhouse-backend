@@ -1,8 +1,8 @@
 {
-  "name": "01-passport-local",
+  "name": "26-autorizacion-autenticacion",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "desafio-autenticacion.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,9 +13,6 @@
     "bcrypt": "^5.0.1",
     "cookie-parser": "^1.4.5",
     "express": "^4.17.1",
-    "express-session": "^1.17.2",
-    "morgan": "^1.10.0",
-    "passport": "^0.4.1",
-    "passport-local": "^1.0.0"
+    "express-session": "^1.17.2"
   }
 }

@@ -3,6 +3,7 @@ const express = require('express');
 const passport = require('passport');
 const bcrypt = require('bcrypt');
 const LocalStrategy = require('passport-local').Strategy;
+const morgan = require('morgan');
 
 const usuarios = [];
 let globalId = 0;
@@ -30,24 +31,22 @@ passport.use('login', new LocalStrategy({
 passport.use('signup', new LocalStrategy({
     passReqToCallback: true
 }, function (req, username, password, done) {
-    findOrCreateUser = function () {
-        let usuario = usuarios.find(u => u.username === username);
+    let usuario = usuarios.find(u => u.username === username);
 
-        if (usuario) {
-            console.log('usuario ya existe');
-            return done(null, false, console.log('mensaje', 'usuario ya existe'));
-        } else {
-            let newUser = {
-                id: ++globalId,
-                username: username,
-                password: createHash(password)
-            };
+    if (usuario) {
+        console.log('usuario ya existe');
+        return done(null, false, console.log('mensaje', 'usuario ya existe'));
+    } else {
+        let newUser = {
+            id: ++globalId,
+            username: username,
+            password: createHash(password),
+            rol: req.body.rol
+        };
 
-            usuarios.push(newUser);
-            return done(null, newUser);
-        }
-    },
-    process.nextTick(findOrCreateUser);
+        usuarios.push(newUser);
+        return done(null, newUser);
+    }
 })
 );
 
@@ -79,6 +78,13 @@ passport.deserializeUser(function (id, done) {
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(morgan('dev'));
+
+app.use(require('express-session')({
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: false
+}));
 
 // inicializamos passport
 app.use(passport.initialize());
@@ -90,12 +96,25 @@ function checkAuthentication(req, res, next) {
         //req.isAuthenticated() will return true if user is logged in
         next();
     } else {
-        res.redirect("/login");
+        res.redirect("/formulario");
+    }
+}
+
+function roleAdmin(req, res, next) {
+    console.log('>', req.user)
+    if (req.isAuthenticated() && req.user.rol == 'admin') {
+        next();
+    } else {
+        res.status(401).send('no autorizado')
     }
 }
 
 app.get('/', (req, res) => {
     res.send('Bienvenido al ejemplo de passport');
+});
+
+app.get('/formulario', (req, res) => {
+    res.send('<h1>formulario</h1>')
 });
 
 app.post('/login', passport.authenticate('login', { failureRedirect: '/faillogin' }), (req, res) => {
@@ -108,7 +127,6 @@ app.get('/faillogin', (req, res) => {
 });
 
 app.post('/signup', passport.authenticate('signup', { failureRedirect: '/failsignup' }), (req, res) => {
-    console.log(usuarios);
     res.send(req.body);
 });
 
@@ -118,6 +136,10 @@ app.get('/failssignup', (req, res) => {
 
 app.get('/datos', checkAuthentication, (req, res) => {
     res.send('<h1>datos protegidos por middleware</h1>');
+});
+
+app.get('/datos/admin', roleAdmin, (req, res) => {
+    res.send('<h2>datos que solo el admin puede ver</h2>')
 });
 
 app.delete('/logout', (req, res) => {
