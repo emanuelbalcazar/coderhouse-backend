@@ -14,6 +14,7 @@ app.use(session({
 }))
 
 app.get('/', (req, res) => {
+    console.log(req.session);
     res.send('Servidor express ok!')
 })
 

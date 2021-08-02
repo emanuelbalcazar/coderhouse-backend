@@ -3,10 +3,13 @@ const express = require('express');
 const passport = require('passport');
 const session = require('express-session');
 const FacebookStrategy = require('passport-facebook').Strategy;
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 // completar con sus credenciales
-const FACEBOOK_CLIENT_ID = '<COMPLETAR>';
-const FACEBOOK_CLIENT_SECRET = '<COMPLETAR>';
+const FACEBOOK_CLIENT_ID = process.env.FACEBOOK_CLIENT_ID;
+const FACEBOOK_CLIENT_SECRET = process.env.FACEBOOK_CLIENT_SECRET;
 
 // creamos la aplicacion
 const app = express();

@@ -3,3 +3,6 @@ node_modules/
 package-lock.json
 
 ejemplos/21-DBaaS/02-firebase/firebase-clave.json
+
+ejemplos/27-autorizacion-autenticacion-2/02-twitter/.env
+ejemplos/27-autorizacion-autenticacion-2/01-facebook/.env
