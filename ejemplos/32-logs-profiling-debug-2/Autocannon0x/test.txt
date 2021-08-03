@@ -1,0 +1,8 @@
+npm i -g 0x
+
+npm start
+curl -X GET "http://localhost:8080/newUser?username=dani&password=qwerty123"
+curl -X GET "http://localhost:8080/auth-bloq?username=dani&password=qwerty123"
+curl -X GET "http://localhost:8080/auth-nobloq?username=dani&password=qwerty123"
+
+npm test
