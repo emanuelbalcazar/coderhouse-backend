@@ -31,17 +31,19 @@ passport.use(new TwitterStrategy({
     consumerSecret: TWITTER_SECRET,
     callbackURL: 'http://127.0.0.1:8080/auth/twitter/callback'
 }, function (token, tokenSecret, profile, done) {
-    console.log(profile);
-    let userProfile = profile;
-    return done(null, userProfile.id);
+    console.log('1 - obtengo el perfil')
+    return done(null, profile);
 }));
 
 passport.serializeUser(function (user, done) {
-    done(null, user);
+    console.log('2 - serializar el usuario', user); // --> req.user
+    let userString = JSON.stringify(user._json);
+    done(null, userString);
 });
 
 passport.deserializeUser(function (user, done) {
-    done(null, user);
+    console.log('3 - deserializar el usuario', user);
+    done(null, JSON.parse(user));
 });
 
 // inicializamos passport
@@ -56,7 +58,7 @@ app.get('/auth/twitter', passport.authenticate('twitter'));
 
 app.get('/auth/twitter/callback', passport.authenticate('twitter',
     {
-        successRedirect: '/',
+        successRedirect: '/datos',
         failureRedirect: '/faillogin'
     }
 ));
@@ -67,10 +69,16 @@ app.get('/faillogin', (req, res) => {
 
 app.get('/datos', (req, res) => {
     if (req.isAuthenticated()) {
+        console.log('\n>> REQ.USER ', req.user);
         res.send('<h1>datos protegidos</h1>');
     } else {
         res.status(401).send('debe autenticarse primero');
     }
+});
+
+app.get('/logout', (req, res) => {
+    req.logout();
+    res.send({ logout: 'ok' });
 });
 
 const PORT = 8080;

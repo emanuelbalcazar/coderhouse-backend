@@ -27,13 +27,21 @@ passport.use(new FacebookStrategy({
     clientID: FACEBOOK_CLIENT_ID,
     clientSecret: FACEBOOK_CLIENT_SECRET,
     callbackURL: '/auth/facebook/callback',
-    profileFields: ['id', 'displayName', 'photos', 'emails'],
+    profileFields: ['id', 'displayName', '', 'photos', 'emails'],
     scope: ['email']
 }, function (accessToken, refreshToken, profile, done) {
-    console.log(profile);
+    console.log(JSON.stringify(profile, null, 3));
     let userProfile = profile;
     return done(null, userProfile);
 }));
+
+passport.serializeUser(function (user, done) {
+    done(null, user);
+});
+
+passport.deserializeUser(function (user, done) {
+    done(null, user);
+});
 
 // inicializamos passport
 app.use(passport.initialize());
@@ -47,7 +55,7 @@ app.get('/auth/facebook', passport.authenticate('facebook'));
 
 app.get('/auth/facebook/callback', passport.authenticate('facebook',
     {
-        successRedirect: '/',
+        successRedirect: '/datos',
         failureRedirect: '/faillogin'
     }
 ));
@@ -64,7 +72,12 @@ app.get('/datos', (req, res) => {
     }
 });
 
-const PORT = 8080;
+app.get('/logout', (req, res) => {
+    req.logout();
+    res.send({ logout: 'ok' });
+});
+
+const PORT = process.env.PORT;
 
 app.listen(PORT, () => {
     console.log(`Servidor express escuchando en http://localhost:${PORT}`)
