@@ -6,3 +6,4 @@ ejemplos/21-DBaaS/02-firebase/firebase-clave.json
 
 ejemplos/27-autorizacion-autenticacion-2/02-twitter/.env
 ejemplos/27-autorizacion-autenticacion-2/01-facebook/.env
+ejemplos/30-nginx-escalabilidad/nginx-1.21.1/logs
