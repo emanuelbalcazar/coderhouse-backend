@@ -1,11 +1,10 @@
 const cluster = require('cluster');
-const express = require('express');
 const numCPUs = require('os').cpus().length;
-const app = express()
+const http = require('http');
 
 // crear los workers
 if (cluster.isMaster) {
-    console.log(numCPUs)
+    console.log('num CPUs', numCPUs)
     console.log(`PID MASTER ${process.pid}`)
 
     for (let i = 0; i < numCPUs; i++) {
@@ -19,13 +18,12 @@ if (cluster.isMaster) {
     });
 
 } else {
-    const PORT = parseInt(process.argv[2]) || 8080
+    const PORT = 8080;
 
-    app.get('/', (req, res) => {
-        res.send(`Servidor express en ${PORT} - <b>PID ${process.pid}</b> - ${new Date().toLocaleString()}`)
-    });
+    http.createServer((req, res) => {
+        res.writeHead(200);
+        res.end('hello word!');
+    }).listen(PORT);
 
-    app.listen(PORT, err => {
-        if (!err) console.log(`Servidor express escuchando en http://localhost:${PORT} - PID WORKER ${process.pid}`)
-    });
+    console.log(`Servidor http escuchando en http://localhost:${PORT}`);
 }
