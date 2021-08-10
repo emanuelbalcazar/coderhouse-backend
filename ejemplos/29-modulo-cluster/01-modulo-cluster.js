@@ -13,8 +13,7 @@ if (cluster.isMaster) {
 
     // controlamos la salida de los workers
     cluster.on('exit', worker => {
-        console.log('Worker', worker.process.pid, 'died', new Date().toLocaleString());
-        cluster.fork();
+        console.log('Worker', worker.process.pid, 'died');
     });
 
 } else {
