@@ -1,0 +1,23 @@
+https://nodejs.org/es/docs/guides/simple-profiling/
+node --prof server.js
+
+curl -X GET "http://localhost:8080/newUser?username=dani&password=qwerty123"
+curl -X GET "http://localhost:8080/auth-bloq?username=dani&password=qwerty123"
+curl -X GET "http://localhost:8080/auth-nobloq?username=dani&password=qwerty123"
+
+// -------------- ARTILLERY (TEST DE CARGA) -------------------
+//https://medium.com/the-andela-way/scaling-out-with-node-clusters-1dca4a39a2a
+//npm i -g artillery
+//npm list -g | grep artillery
+
+artillery quick --count 10 -n 50 "http://localhost:8080/auth-bloq?username=dani&password=qwerty123" > result_bloq.txt
+node --prof-process bloq-v8.log > result_prof-bloq.txt
+
+//artillery quick --count 10 -n 50 "http://localhost:8080/auth-nobloq?username=dani&password=qwerty123" > result_nobloq.txt
+node --prof-process nobloq-v8.log > result_prof-nobloq.txt
+
+//-------------------------------------------------------------
+Lo mismo con:
+
+node --inspect server.js
+chrome://inspect
