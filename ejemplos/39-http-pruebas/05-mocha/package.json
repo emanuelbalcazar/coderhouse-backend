@@ -1,0 +1,17 @@
+{
+  "name": "05-mocha",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha index.test.js",
+    "test-manual": "node index.prueba.manual.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^8.3.2",
+    "request": "^2.88.2"
+  }
+}
