@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //1
+        fetch('/graphql?query={message}')
+        .then(r => r.json())
+        .then(data => console.log(data))
+        .catch(console.error)
+
+        //2
+        fetch('/graphql?query={messages}')
+        .then(r => r.json())
+        .then(data => console.log(data))
+        .catch(console.error)
+
+        //3
+        fetch('/graphql', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+            },
+            body: JSON.stringify({ query: "{ message }" })
+        })
+        .then(r => r.json())
+        .then(data => console.log(data))
+        .catch(console.error)
+
+        //4
+        fetch('/graphql', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+            },
+            body: JSON.stringify({ query: "{ messages }" })
+        })
+        .then(r => r.json())
+        .then(data => console.log(data))
+        .catch(console.error)
+
+        //5
+        /* var query = `
+            query getSingleCourse($courseID: Int!) {
+                course(id: $courseID) {
+                    title
+                    author
+                    description
+                    topic
+                    url
+                }
+            }
+        `;
+        var variables = {"courseID":1} */
+
+        /*
+        //6
+        var query = `
+            query getSingleCourse($topic: String!) {
+                courses(topic: $topic) {
+                    title
+                    author
+                    description
+                    topic
+                    url
+                }
+            }
+        `;
+        var variables = {"topic":"Node.js"}
+        */
+        
+        /*
+        //7
+        var query = "{ message }"
+        var variables = {}
+        */
+
+        //8
+        /* var query = `
+            query getCourseWithFragments($courseID1: Int!, $courseID2: Int!) {
+                course1: course(id: $courseID1) {
+                        ...courseFields
+                },
+                course2: course(id: $courseID2) {
+                        ...courseFields
+                } 
+            }
+            fragment courseFields on Course {
+                title
+                author
+                description
+                topic
+                url
+            }
+        `;
+        var variables = { 
+            "courseID1":1,
+            "courseID2":2
+        } */
+
+        //9
+        /*
+        var query = `
+            mutation updateCourseTopic($id: Int!, $topic: String!) {
+                updateCourseTopic(id: $id, topic: $topic) {
+                    ... courseFields
+                }
+            }
+            fragment courseFields on Course {
+                title
+                author
+                description
+                topic
+                url
+                id
+            }
+        `;
+        var variables = { 
+            "id": 2,
+            "topic": "JavaScript"
+        }
+        */
+
+        //10
+        //var query = "{ numeros }"
+        /* var query = `
+            query getCursos {
+                cursos {
+                    title
+                    author
+                    description
+                    topic
+                    url
+                }
+            }
+        ` */
+        var query = `{ cursos2 {
+                        title
+                        author
+                        description
+                        topic
+                        url
+                    }}`
+        var variables = {}
+
+
+
+        fetch('/graphql', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+            },
+            body: JSON.stringify({
+                query,
+                variables 
+            })
+        })
+        .then(r => r.json())
+        .then(data => console.log('C',data))
+        .catch(console.error)
+
+
+    </script>
+
+</body>
+
+</html>
