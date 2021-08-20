@@ -1,0 +1,40 @@
+Statistical profiling result from bloq-v8.log, (10282 ticks, 0 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+   8380   81.5%          C:\WINDOWS\SYSTEM32\ntdll.dll
+   1900   18.5%          C:\Program Files\nodejs\node.exe
+      1    0.0%          C:\WINDOWS\System32\KERNELBASE.dll
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+      1    0.0%  100.0%  LazyCompile: *normalizeString path.js:52:25
+
+ [C++]:
+   ticks  total  nonlib   name
+
+ [Summary]:
+   ticks  total  nonlib   name
+      1    0.0%  100.0%  JavaScript
+      0    0.0%    0.0%  C++
+      3    0.0%  300.0%  GC
+  10281  100.0%          Shared libraries
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+   8380   81.5%  C:\WINDOWS\SYSTEM32\ntdll.dll
+
+   1900   18.5%  C:\Program Files\nodejs\node.exe
+   1881   99.0%    C:\Program Files\nodejs\node.exe
+   1859   98.8%      LazyCompile: ~pbkdf2Sync internal/crypto/pbkdf2.js:44:20
+   1855   99.8%        LazyCompile: ~<anonymous> C:\Users\Admin\Documents\CoderHouse\coderhouse-backend\ejemplos\32-logs-profiling-debug-2\02-profiling\server.js:31:23
+   1855  100.0%          LazyCompile: ~handle C:\Users\Admin\Documents\CoderHouse\coderhouse-backend\node_modules\express\lib\router\layer.js:86:49
+   1855  100.0%            LazyCompile: ~next C:\Users\Admin\Documents\CoderHouse\coderhouse-backend\node_modules\express\lib\router\route.js:114:16
+

@@ -1,0 +1,19 @@
+CON ARTILLERY
+
+levantar el servidor con prof --> node --prof server.js
+
+artillery quick --count 50 -n 50 "http://localhost:8080/randoms-debug" > result_debug.txt
+
+artillery quick --count 50 -n 50 "http://localhost:8080/randoms-nodebug" > result_nodebug.txt
+
+CON INSPECT
+
+node --inspect server.js
+chrome://inspect
+
+seleccionar: Open dedicated DevTools for Node
+
+
+artillery quick --count 50 -n 50 "http://localhost:8080/randoms-debug" > result_debug.txt
+
+artillery quick --count 50 -n 50 "http://localhost:8080/randoms-nodebug" > result_nodebug.txt
