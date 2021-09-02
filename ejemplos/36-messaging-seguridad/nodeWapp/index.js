@@ -6,7 +6,7 @@
 
 //https://www.twilio.com/console/sms/whatsapp/sandbox
 const accountSid = 'AC129b5ed55990eacb29b4115f38752c63';
-const authToken = '524d4b29fba0a505d6bf8bceb167adbc';
+const authToken = 'b9b8b93b45779fa0634e100f5caccaf0';
 
 const client = require('twilio')(accountSid, authToken);
 
