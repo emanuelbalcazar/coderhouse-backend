@@ -3,8 +3,12 @@
 /* ---------------------------------------------------------------------- */
 // Download the helper library from https://www.twilio.com/docs/node/install
 // Your Account Sid and Auth Token from twilio.com/console
-const accountSid = 'AC129b5ed55990eacb29b4115f38752c63';
-const authToken = 'cf0926fb1876af151745a5bade7a6255';
+const dotenv = require('dotenv');
+dotenv.config();
+
+//https://www.twilio.com/console/sms/whatsapp/sandbox
+const accountSid = process.env.ACCOUNT_SID;
+const authToken = process.env.AUTH_TOKEN;
 
 const client = require('twilio')(accountSid, authToken);
 
