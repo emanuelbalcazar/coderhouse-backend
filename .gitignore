@@ -10,3 +10,4 @@ ejemplos/30-nginx-escalabilidad/nginx-1.21.1/logs
 ejemplos/35-emailing-messaging/02-gmail/.env
 ejemplos/35-emailing-messaging/03-twilio/.env
 ejemplos/36-messaging-seguridad/nodeWapp/.env
+ejemplos/40-arquitectura-servidor-diseño/ejemplo-servidor-mongodb/.env
