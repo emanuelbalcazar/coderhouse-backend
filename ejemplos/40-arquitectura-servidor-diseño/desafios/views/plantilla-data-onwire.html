@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de ingreso</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">    
+
+</head>
+<body>
+    <div class="jumbotron">
+        <h1 class="alert alert-success">DATA on wire</h1>
+        <hr>
+    
+        <h2 class="alert alert-primary">Ingreso de Datos</h2>
+        <form autocomplete="off">
+            <!-- Campo nombre -->
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input id="nombre" class="form-control" type="text" name="nombre">
+            </div>
+    
+            <!-- Campo apellido -->
+            <div class="form-group">
+                <label for="apellido">Apellido</label>
+                <input id="apellido" class="form-control" type="text" name="apellido">
+            </div>
+    
+            <!-- Campo DNI -->
+            <div class="form-group">
+                <label for="DNI">DNI</label>
+                <input id="DNI" class="form-control" type="number" name="DNI">
+            </div>
+    
+            <!-- Botón de envío -->
+            <button class="btn btn-success mt-3 mb-5">Enviar</button>
+        </form>
+        <br>
+    
+        <h2 class="alert alert-primary">Vista de Datos</h2>
+        <div id="datos"></div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+    <script>
+        document.querySelector('button').addEventListener('click',enviar)
+        const inputs = document.querySelectorAll('input')
+    
+        async function enviar(e) {
+            e.preventDefault()
+            const response = await fetch('/data-onwire', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        nombre: inputs[0].value,
+                        apellido: inputs[1].value,
+                        DNI: inputs[2].value
+                    })
+            });
+            let persona = await response.json(); // parses JSON response into native JavaScript objects
+            console.log(persona)
+    
+            cargarDatos()
+
+            inputs.forEach(input => input.value = '')
+        }
+    
+        const getPlantilla = () => `
+            {{#if personas.length}} 
+                <div class="table-responsive">
+                    <table class="table table-dark">
+                        <tr> <th>Nombre</th> <th>Apellido</th> <th>DNI</th></tr>
+                        {{#each personas}}
+                            <tr> <td>{{this.nombre}}</td> <td>{{this.apellido}}</td> <td>{{this.DNI}}</td> </tr>
+                        {{/each}}
+                    </table>
+                </div>
+            {{else}}  
+                <h4 class="alert alert-warning">No se encontraron personas</h4>
+            {{/if}}
+        `
+    
+        async function cargarDatos() {
+            const response = await fetch('/data-json')
+            let { personas } = await response.json(); // parses JSON response into native JavaScript objects
+
+            // compile the template
+            const template = Handlebars.compile(getPlantilla());
+            // execute the compiled template and print the output to the console
+            //console.log(personas)
+
+            let HTML = template({ personas })
+            //console.log(HTML)
+            document.getElementById('datos').innerHTML = HTML;
+        }
+        cargarDatos()
+    
+    </script>
+
+</body>
+</html>

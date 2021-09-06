@@ -1,0 +1,43 @@
+<div class="jumbotron">
+    <h1 class="alert alert-success">HTML on wire</h1>
+    <hr>
+
+    <h2 class="alert alert-primary">Ingreso de Datos</h2>
+    <form autocomplete="off" action="/html-onwire"  method="POST">
+        <!-- Campo nombre -->
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" class="form-control" type="text" name="nombre">
+        </div>
+
+        <!-- Campo apellido -->
+        <div class="form-group">
+            <label for="apellido">Apellido</label>
+            <input id="apellido" class="form-control" type="text" name="apellido">
+        </div>
+
+        <!-- Campo DNI -->
+        <div class="form-group">
+            <label for="DNI">DNI</label>
+            <input id="DNI" class="form-control" type="number" name="DNI">
+        </div>
+
+        <!-- Botón de envío -->
+        <button class="btn btn-success mt-3 mb-5">Enviar</button>
+    </form>
+    <br>
+
+    <h2 class="alert alert-primary">Vista de Datos</h2>
+    {{#if personas.length}} 
+        <div class="table-responsive">
+            <table class="table table-dark">
+                <tr> <th>Nombre</th> <th>Apellido</th> <th>DNI</th></tr>
+                {{#each personas}}
+                    <tr> <td>{{this.nombre}}</td> <td>{{this.apellido}}</td> <td>{{this.DNI}}</td> </tr>
+                {{/each}}
+            </table>
+        </div>
+    {{else}}  
+        <h4 class="alert alert-warning">No se encontraron personas</h4>
+    {{/if}}
+</div>
