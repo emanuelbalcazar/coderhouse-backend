@@ -1,0 +1,45 @@
+<div class="row">
+
+    <button class="btn btn-sm btn-primary" data-ng-click="back()" title="Volver a la pagina anterior">
+        <i class="glyphicon glyphicon-arrow-left"></i>&nbsp;Volver
+    </button>
+
+    <div class="btn-toolbar pull-right">
+        <button class="btn btn-sm btn-primary pull-right" data-ng-click="redirectTo('/machines/new')" title="Nueva">
+            <i class="glyphicon glyphicon-plus"></i>&nbsp;Nueva
+        </button>
+    </div>
+
+    <h4></h4>
+
+    <!-- Table -->
+    <table ng-table="tableParams" class="table table-condensed table-bordered table-striped" show-filter="false"
+        data-ng-show="records.length">
+        <tr ng-repeat="machine in $data">
+            <td title="'#'">
+                <b>{{$index + 1}}</b>
+            </td>
+            <td title="'Nombre'">
+                {{machine.name}}
+            </td>
+            <td title="'Acciones'">
+                <div class="text-center">
+                    <div class="btn-group">
+                        <span class="glyphicon glyphicon-pencil text-info" data-ng-click="edit(machine)"
+                            uib-tooltip="Editar"></span>
+                    </div>
+                    <div class="btn-group">
+                        <span class="glyphicon glyphicon-trash text-danger" data-ng-click="remove(machine)"
+                            uib-tooltip="Eliminar"></span>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Without Data -->
+    <div data-ng-hide="records.length">
+        <h3>No hay maquinas de turing registradas.</h3>
+    </div>
+
+</div>

@@ -14,10 +14,10 @@ const authToken = process.env.AUTH_TOKEN;
 const client = require('twilio')(accountSid, authToken);
 
 client.messages.create({
-      body: `Te paso un foto de Twilio...`,
-      mediaUrl: ['https://www.investingmoney.biz/public/img/art/xl/18012019161021Twilio-IoT.jpg'],
+      body: process.argv[3],
+      mediaUrl: ['https://i0.wp.com/unprogramador.com/wp-content/uploads/2020/04/BeFunky-design.jpg?resize=800%2C500&ssl=1'],
       from: 'whatsapp:+14155238886',
-      to: 'whatsapp:+5492805058546'
+      to: `whatsapp:${process.argv[2]}`
       })
-.then(message => console.log(message.sid))
+.then(message => console.log(message))
 .catch(console.log)    
