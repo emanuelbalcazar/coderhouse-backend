@@ -1,0 +1,35 @@
+# mensaje
+{ message }
+
+# mensaje con split
+{ messages }
+
+# numero
+{ number }
+
+# todos los cursos con su id, titulo y autor
+{ courses {
+  id,
+  title,
+  author
+} }
+
+# obtengo un curso por id
+{ course(id: 1) {
+  id,
+  title,
+  author
+}}
+
+# curso por topicos
+{ courseByTopic(topic: "Node.js") {
+  id, title
+}}
+
+# llamado de una mutacion, actualizando el topico de un curso
+mutation {updateCourseTopic(id: 1, topic: "Python") {
+  id,
+  title,
+  author,
+  topic
+}}

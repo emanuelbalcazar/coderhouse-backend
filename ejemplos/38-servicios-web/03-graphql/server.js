@@ -10,12 +10,11 @@ var schema = buildSchema(`
     type Query {
         message: String,
         messages: [String],
-        numero: Int,
-        numeros: [Int],
+        number: Int,
+        numbers: [Int],
         course(id: Int!): Course
-        courses(topic: String): [Course]
-        cursos: [Course]
-        cursos2: [Course]
+        courseByTopic(topic: String): [Course]
+        courses: [Course]
     },
     type Mutation {
         updateCourseTopic(id: Int!, topic: String!): Course
@@ -57,13 +56,14 @@ var coursesData = [
     }
 ]
 
-var getCourse = function (args) {
+var getCourseById = function (args) {
     var id = args.id;
     return coursesData.filter(course => {
         return course.id == id;
     })[0];
 }
-var getCourses = function (args) {
+
+var getCoursesByTopic = function (args) {
     if (args.topic) {
         var topic = args.topic;
         return coursesData.filter(course => course.topic === topic);
@@ -72,7 +72,7 @@ var getCourses = function (args) {
     }
 }
 
-var getCursos = function () {
+var getAllCourses = function () {
     return coursesData
 }
 
@@ -90,12 +90,11 @@ var updateCourseTopic = function ({ id, topic }) {
 var root = {
     message: () => 'Hola Mundo!',
     messages: () => 'Hola Mundo!'.split(' '),
-    numero: () => 123,
-    numeros: () => [1, 2, 3],
-    course: getCourse,
-    courses: getCourses,
-    cursos: getCursos,
-    cursos2: () => coursesData,
+    number: () => 123,
+    numbers: () => [1, 2, 3],
+    course: getCourseById,
+    courseByTopic: getCoursesByTopic,
+    courses: getAllCourses,
     updateCourseTopic: updateCourseTopic
 };
 // Create an express server and a GraphQL endpoint
