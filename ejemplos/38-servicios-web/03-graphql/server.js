@@ -14,10 +14,13 @@ var schema = buildSchema(`
         numbers: [Int],
         course(id: Int!): Course
         courseByTopic(topic: String): [Course]
-        courses: [Course]
+        courses: [Course],
+        saludo(nombre: String!): String,
+        articulos: [Articulo]
     },
     type Mutation {
-        updateCourseTopic(id: Int!, topic: String!): Course
+        updateCourseTopic(id: Int!, topic: String!): Course,
+        guardarArticulo(titulo: String!, texto: String!, autor: String!): Articulo
     },
     type Course {
         id: Int
@@ -26,6 +29,11 @@ var schema = buildSchema(`
         description: String
         topic: String
         url: String
+    }
+    type Articulo {
+        titulo: String,
+        texto: String,
+        autor: String
     }    
 `);
 
@@ -55,6 +63,8 @@ var coursesData = [
         url: 'https://codingthesmartway.com/courses/understand-javascript/'
     }
 ]
+
+var articulos = [];
 
 var getCourseById = function (args) {
     var id = args.id;
@@ -86,6 +96,16 @@ var updateCourseTopic = function ({ id, topic }) {
     return coursesData.filter(course => course.id === id)[0];
 }
 
+var saludo = function ({ nombre }) {
+    return 'Bienvenido ' + nombre;
+}
+
+var guardarArticulo = function ({ titulo, texto, autor }) {
+    let articulo = { titulo, texto, autor };
+    articulos.push(articulo);
+    return articulo;
+}
+
 // Root resolver
 var root = {
     message: () => 'Hola Mundo!',
@@ -95,7 +115,10 @@ var root = {
     course: getCourseById,
     courseByTopic: getCoursesByTopic,
     courses: getAllCourses,
-    updateCourseTopic: updateCourseTopic
+    updateCourseTopic: updateCourseTopic,
+    saludo: saludo,
+    articulos: () => articulos,
+    guardarArticulo: guardarArticulo
 };
 // Create an express server and a GraphQL endpoint
 var app = express();
