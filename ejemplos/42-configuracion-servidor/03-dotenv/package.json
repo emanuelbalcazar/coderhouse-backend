@@ -1,0 +1,16 @@
+{
+  "name": "03-dotenv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "env:prod": "set NODE_ENV=production && node server.js",
+    "env:test": "set NODE_ENV=test && node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0"
+  }
+}
