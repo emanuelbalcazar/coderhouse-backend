@@ -32,7 +32,7 @@ router.post('/articles', async (req, res) => {
 router.put('/articles/:id', async (req, res) => {
     try {
         let updated = await controller.update(req.params.id, req.body);
-        res.send(created);
+        res.send(updated);
     } catch (error) {
         res.status(500).send({ error: error.message });
     }

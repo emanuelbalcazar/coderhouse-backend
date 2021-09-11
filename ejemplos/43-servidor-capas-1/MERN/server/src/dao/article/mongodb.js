@@ -1,5 +1,6 @@
 const IDao = require('../IDao');
 const mongoose = require('mongoose');
+const ObjectId = require('mongodb').ObjectId;
 const config = require('../../config/config');
 
 class MongoDBDao extends IDao {
@@ -15,7 +16,7 @@ class MongoDBDao extends IDao {
     }
 
     async findById(id) {
-        return await mongoose.connection.db.collection(this.collectionName).findOne({ _id: id });
+        return await mongoose.connection.db.collection(this.collectionName).findOne({ '_id': ObjectId(id) });
     }
 
     async find(query = {}) {
@@ -23,11 +24,11 @@ class MongoDBDao extends IDao {
     }
 
     async update(id, data) {
-        return await mongoose.connection.db.collection(this.collectionName).findOneAndUpdate({ _id: id }, data);
+        return await mongoose.connection.db.collection(this.collectionName).findOneAndUpdate({ '_id': ObjectId(id) }, { $set: data });
     }
 
     async delete(id) {
-        return await mongoose.connection.db.collection(this.collectionName).findOneAndDelete({ _id: id });
+        return await mongoose.connection.db.collection(this.collectionName).findOneAndDelete({ '_id': ObjectId(id) });
     }
 }
 
