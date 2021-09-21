@@ -1,6 +1,7 @@
 const computadora = require('./computadora');
 const lampara = require('./lampara');
 const adaptadorLampara = require('./adaptador-lampara');
+const lamparaInglesa = require('./lampara-inglesa');
 
 // enciendo los dispositivos
 computadora.encender();

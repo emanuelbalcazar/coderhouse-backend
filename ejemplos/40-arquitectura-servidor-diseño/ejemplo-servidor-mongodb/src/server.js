@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // protejo el servidor ante cualquier excepcion no atrapada
-app.use((err, req, res, next) => {
+app.use((err, req, res) => {
     console.error(err.message);
     return res.status(500).send('Algo se rompio!');
 });

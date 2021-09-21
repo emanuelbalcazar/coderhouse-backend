@@ -19,7 +19,7 @@
         <!-- Campo DNI -->
         <div class="form-group">
             <label for="DNI">DNI</label>
-            <input id="DNI" class="form-control" type="number" name="DNI">
+            <input id="DNI" class="form-control" type="number" name="dni">
         </div>
 
         <!-- Botón de envío -->
@@ -33,7 +33,7 @@
             <table class="table table-dark">
                 <tr> <th>Nombre</th> <th>Apellido</th> <th>DNI</th></tr>
                 {{#each personas}}
-                    <tr> <td>{{this.nombre}}</td> <td>{{this.apellido}}</td> <td>{{this.DNI}}</td> </tr>
+                    <tr> <td>{{this.nombre}}</td> <td>{{this.apellido}}</td> <td>{{this.dni}}</td> </tr>
                 {{/each}}
             </table>
         </div>
