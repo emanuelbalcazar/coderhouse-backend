@@ -5,6 +5,7 @@ const helmet = require('helmet');
 const logger = require('morgan');
 const chalk = require('chalk');
 const config = require('./config/config');
+const cors = require('cors');
 
 // load .env configuration
 require('dotenv').config();
@@ -21,6 +22,14 @@ app.use(compression());
 app.use(helmet());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+const corsOptions = {
+    origin: process.env.ORIGIN,
+    optionSuccessStatus: 200,
+    methods: "GET, PUT, POST, DELETE"
+}
+
+app.use(cors(corsOptions));
 
 // static files
 app.use(express.static('public'));
