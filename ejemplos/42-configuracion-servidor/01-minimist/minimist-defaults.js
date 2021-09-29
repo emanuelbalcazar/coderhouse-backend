@@ -2,10 +2,6 @@
 
 const minimist = require('minimist');
 
-let args = minimist(process.argv.slice(2), {
-    default: {
-        port: 8080
-    }
-});
+let args = minimist(process.argv.slice(2));
 
 console.log('args:', args);

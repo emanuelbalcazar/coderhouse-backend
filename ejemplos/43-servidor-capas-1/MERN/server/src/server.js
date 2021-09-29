@@ -58,5 +58,5 @@ app.set('port', config.PORT);
 
 // listening application.
 app.listen(app.get('port'), async () => {
-    console.log(success(`[server] - started in ${app.get('host')}:${app.get('port')}`));
+    console.log(success(`[server] - started in ${app.get('host')}:${app.get('port')} in ${config.ENV}`));
 });

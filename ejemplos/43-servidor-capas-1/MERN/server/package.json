@@ -5,7 +5,9 @@
   "main": "src/server.js",
   "scripts": {
     "start": "node ./src/server",
-    "dev": "nodemon .",
+    "dev": "set NODE_ENV=development&& node ./src/server",
+    "prod": "set NODE_ENV=production&& node ./src/server",
+    "watch": "nodemon .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

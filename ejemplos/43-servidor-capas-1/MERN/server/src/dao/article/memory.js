@@ -1,6 +1,6 @@
 const IDao = require('../IDao');
 const { v4: uuidv4 } = require('uuid');
-
+const ArticleDTO = require('../../dto/article.dto');
 class MemoryDao extends IDao {
 
     constructor() {
@@ -16,7 +16,8 @@ class MemoryDao extends IDao {
     }
 
     async findById(id) {
-        return this.articles.find(article => article.id == id);
+        let article = this.articles.find(article => article.id == id);
+        return new ArticleDTO(article.id, article.title, article.text, article.author);
     }
 
     async find(query = {}) {
