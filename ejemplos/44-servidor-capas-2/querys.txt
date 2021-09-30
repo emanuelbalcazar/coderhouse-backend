@@ -1,0 +1,81 @@
+/*----------------------------*/
+/*    graphiQL -> get all     */
+/*----------------------------*/
+{
+    noticias {
+        _id
+        titulo
+        cuerpo
+        autor
+        imagen
+        email
+        vista
+  }
+}
+
+/*----------------------------*/
+/*   graphiQL -> get por id   */
+/*----------------------------*/
+query{
+     noticias(_id: "3") {
+        _id
+        titulo
+        cuerpo
+        autor
+        imagen
+        email
+        vista
+    }
+}
+
+/*-----------------------------*/
+/*     graphiQL -> guardar     */
+/*-----------------------------*/
+mutation {
+    guardarNoticia(
+        titulo : "Hola",
+        cuerpo: "Mundo",
+        autor: "DS",
+        imagen: "https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/7_avatar-256.png",
+        email: "d@s",
+        vista: false) {
+            _id
+            titulo
+            cuerpo
+            autor
+            imagen
+            email
+            vista
+		}
+}
+
+/*-----------------------------*/
+/*  graphiQL -> delete por id  */
+/*-----------------------------*/
+mutation {
+    borrarNoticia(_id:"1"){
+        _id
+        titulo
+        cuerpo
+        autor
+        imagen
+        email
+        vista
+    }
+}
+
+/*----------------------------------*/
+/*      graphiQL -> actualizar      */
+/*----------------------------------*/
+mutation {
+    actualizarNoticia(_id:"4",vista: true) {
+        _id
+        titulo
+        cuerpo
+        autor
+        imagen
+        email
+        vista
+    }
+}
+
