@@ -17,8 +17,7 @@ class ArticleController {
 
     async findById(id) {
         let article = await this.articleDao.findById(id);
-        console.log('>>> ID', article.getId());
-        return article;
+        return article.toJSON();
     }
 
     async update(id, data) {

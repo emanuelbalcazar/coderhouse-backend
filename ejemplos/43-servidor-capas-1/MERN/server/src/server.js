@@ -17,7 +17,6 @@ const error = chalk.red;
 const app = express();
 
 // configure all environments.
-app.use(logger('dev'));
 app.use(compression());
 app.use(helmet());
 app.use(express.json());
@@ -38,12 +37,18 @@ app.use(express.static('public'));
 const index = require('./routes/index');
 app.use(index);
 
-const articleRouter = require('./routes/articles');
-app.use('/api', articleRouter);
+if (config.ENV === 'development') {
+    app.use(logger('dev'));
+    const graphiql = require('./routes/graphql');
+    app.use('/articles', graphiql.start());
+} else {
+    const articleRouter = require('./routes/articles');
+    app.use('/api', articleRouter);
+}
 
 // catch all errors.
-app.use(function (err, req, res) {
-    console.log(error(err.stack));
+app.use(function (err, req, res, next) {
+    console.log(error(err.message));
     res.status(500).json({ code: 500, message: err.message });
 });
 
@@ -58,5 +63,5 @@ app.set('port', config.PORT);
 
 // listening application.
 app.listen(app.get('port'), async () => {
-    console.log(success(`[server] - started in ${app.get('host')}:${app.get('port')} in ${config.ENV}`));
+    console.log(success(`[server] - started in ${app.get('host')}:${app.get('port')} in ${config.ENV} - GRAPHIQL: ${config.GRAPHIQL}`));
 });

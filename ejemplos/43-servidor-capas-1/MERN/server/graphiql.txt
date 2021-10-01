@@ -1,0 +1,7 @@
+# todos los articulos
+{ articles { title, author, _id} }
+
+# articulo por id
+mutation {articleById(id:"613c059a8bd986a38fa80f68") {id, title, author }}
+
+mutation {deleteArticleById(id:"613c059a8bd986a38fa80f68") {id, title, author }}

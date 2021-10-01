@@ -21,7 +21,10 @@ class MongoDBDao extends IDao {
     }
 
     async find(query = {}) {
-        return await mongoose.connection.db.collection(this.collectionName).find(query).toArray();
+        let articles = await mongoose.connection.db.collection(this.collectionName).find(query).toArray();
+        return articles.map(article => {
+            return new ArticleDTO(article._id, article.title, article.text, article.author).toJSON();
+        });
     }
 
     async update(id, data) {
