@@ -1,0 +1,9 @@
+---- Nest -----
+https://www.paradigmadigital.com/dev/introduccion-nestjs/
+https://www.chakray.com/es/swagger-y-swagger-ui-por-que-es-imprescindible-para-tus-apis/
+https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/que-es-swagger/
+https://www.npmjs.com/package/@nestjs/cli
+https://docs.nestjs.com/cli/overview
+
+
+$ npm i -g @nestjs/cli

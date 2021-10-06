@@ -1,0 +1,8 @@
+------ Adonis ------
+https://elihucruz.medium.com/adonisjs-es-un-framework-orientado-al-desarrollo-web-basado-en-node-js-e907803fb8e4
+https://www.victorvr.com/tutorial/conoce-adonisjs-un-framework-mvc-estilo-laravel-para-nodejs
+https://www.npmjs.com/package/@adonisjs/cli
+https://legacy.adonisjs.com/docs/4.1/installation
+https://platzi.com/tutoriales/1151-nodejs/2555-fullstack-sin-dolor-con-adonisjs-2/
+
+npm i -g @adonisjs/cli
