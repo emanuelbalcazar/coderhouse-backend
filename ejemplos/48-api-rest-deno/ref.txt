@@ -1,0 +1,24 @@
+Desarrollo de una API REST en Deno
+
+Ejemplo b�sico de servidor en Deno con 
+- deno-express (simulaci�n de express para deno) con get, post, put y delete
+- Oak (simulaci�n de Koa para deno) con get, post, put y delete
+
+Temas:
+1)manejo de dependencias (Est� aplicado a todos los proyectos que siguen a continuaci�n)
+https://deno.land/manual/examples/manage_dependencies
+https://werewolf.codes/deno/db/src/commit/0adb59871fe1577340aefd8237bf6767bf648e7f/deps.ts?lang=es-ES
+
+2)deno-express api rest memory persist (carpeta APIREST_DenoExpress)
+https://github.com/NMathar/deno-express
+https://levelup.gitconnected.com/build-a-simple-rest-api-with-deno-and-express-b0b62e52c230
+
+3)oak (carpeta Oak)
+https://deno.land/x/oak@v7.7.0
+
+4)oak api rest memory persist (carpeta APIREST_Oak)
+https://pablomagaz.com/blog/creando-api-rest-con-deno-y-oak
+
+5)oak api rest mongo persist (carpeta APIREST_Oak_Mongo)
+https://deno.land/x/mongo@v0.23.1
+https://dev.to/nakshcodes/create-your-first-restful-api-with-deno-oak-and-mongodb-48a7

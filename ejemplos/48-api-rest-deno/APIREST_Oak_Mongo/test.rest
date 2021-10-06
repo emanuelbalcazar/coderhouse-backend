@@ -1,0 +1,41 @@
+###
+# 1 GET All Quotes 
+# STATUS TESTED ✔️
+GET http://localhost:4000/api/quotes
+Content-Type: application/json
+
+###
+# 2 GET Quote
+# STATUS TESTED ✔️
+GET http://localhost:4000/api/quotes/1
+Content-Type: application/json
+
+###
+# 3 Add Quote
+# STATUS TESTED ✔️
+POST http://localhost:4000/api/quotes
+Content-Type: application/json
+
+{
+    "quote": "Whatsup Batman",
+    "quoteID": "2",
+    "author": "Batwoman"
+}
+
+###
+# 4 Update Quote API 
+# STATUS TESTED ✔️
+PUT http://localhost:4000/api/quotes/1
+Content-Type: application/json
+
+{
+    "quote": "Master Wayne",
+    "quoteID": "1",
+    "author": "Wayne"
+}
+
+###
+# 5 Delete Quote API 
+# STATUS TESTED ✔️
+DELETE http://localhost:4000/api/quotes/1
+Content-Type: application/json
