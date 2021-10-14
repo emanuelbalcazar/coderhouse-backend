@@ -1,0 +1,16 @@
+{
+  "deno.enable": true,
+  "deno.lint": false,
+  "[typescript]": {
+    "editor.defaultFormatter": "denoland.vscode-deno",
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "denoland.vscode-deno",
+  },
+  "deno.import_intellisense_origins": {
+    "https://deno.land": true
+  },
+  "deno.suggest.imports.hosts": {
+    "https://deno.land": false
+  },
+}
